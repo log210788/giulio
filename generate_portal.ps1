@@ -1,8 +1,8 @@
-﻿# generate_portal.ps1 - Complete generator for Giulio M's Peaceful Interactive Sanctuary
+﻿# generate_portal.ps1 - Complete generator for Giulio M's Peaceful Interactive Sanctuary (Actual Lesson Notes)
 $ErrorActionPreference = "Stop"
 
 Write-Host "=========================================================="
-Write-Host "Building Giulio M's Lesson 01 Interactive Portal"
+Write-Host "Rebuilding Giulio M's Lesson 01 Interactive Portal"
 Write-Host "=========================================================="
 
 # 1. Load Raw Transcript
@@ -29,960 +29,960 @@ if ($spk -ne "") {
 }
 Write-Host "Loaded $($turns.Count) turns from raw transcript."
 
-# 2. Define VOCAB_DB (60 rich B2-C2 items)
+# 2. Define VOCAB_DB (60 rich B2-C2 items with Italian equivalents)
 $vocabDb = [ordered]@{
-    "fluency" = @{
-        word = "fluency"
-        ipa = "/ˈfluː.ən.si/"
+    "crunch-time" = @{
+        word = "crunch time"
+        ipa = "/krʌntʃ taɪm/"
+        pos = "noun"
+        level = "C1"
+        time = "01:08"
+        turnId = "turn-7"
+        cat = "culture"
+        def = "A critical period of intense work and long hours immediately preceding an urgent project deadline."
+        quote = "Louie (01:08): 'So you had crunch time... where you have a deadline coming and everyone is working crazy hours to get it done.'"
+        es = "fase di massimo impegno / periodo critico"
+    }
+    "timeline" = @{
+        word = "timeline"
+        ipa = "/ˈtaɪm.laɪn/"
         pos = "noun"
         level = "B2"
-        time = "14:24"
-        turnId = "turn-14"
-        cat = "language"
-        def = "The ability to speak or write a language smoothly, easily, and without awkward hesitation."
-        quote = "Giulio (14:24): '...we are here today because I would like to improve my fluency while speaking and my grammar...'"
-        es = "fluidez verbal"
+        time = "00:23"
+        turnId = "turn-5"
+        cat = "culture"
+        def = "The planned schedule displaying the expected sequence and delivery milestones of a project."
+        quote = "Giulio (00:23): '...we need to work on shifts in order to achieve some goals on the project. So we are trying to respect the timeline and the deadline...'"
+        es = "cronoprogramma / tempistica"
     }
-    "coherence" = @{
-        word = "coherence"
-        ipa = "/kəʊˈhɪə.rəns/"
+    "deadline" = @{
+        word = "deadline"
+        ipa = "/ˈded.laɪn/"
         pos = "noun"
-        level = "C1"
-        time = "14:24"
-        turnId = "turn-14"
-        cat = "language"
-        def = "The quality of logical connection, consistency, and clear relationship between thoughts in speech."
-        quote = "Giulio (14:24): '...I feel that when I speak, I have sometimes this lack of coherence when making my phrases.'"
-        es = "coherencia / hilación lógica"
+        level = "B2"
+        time = "00:23"
+        turnId = "turn-5"
+        cat = "culture"
+        def = "The final agreed date or time by which a contracted task or engineering build must be completed."
+        quote = "Giulio (00:23): '...we are trying to respect the timeline and the deadline, and we will see.'"
+        es = "scadenza contrattuale"
     }
-    "mental-translation" = @{
-        word = "mental translation"
-        ipa = "/ˈmen.təl trænzˈleɪ.ʃən/"
+    "shift-work" = @{
+        word = "shift work"
+        ipa = "/ʃɪft wɜːk/"
         pos = "noun"
-        level = "C1"
-        time = "14:24"
-        turnId = "turn-14"
-        cat = "language"
-        def = "The cognitive habit of translating ideas from one's native language into English before speaking."
-        quote = "Giulio (14:24): 'I think I have this problem that I try to translate first in my head sometimes. So I need to think what I want to say and then translate to English.'"
-        es = "traducción mental"
+        level = "B2"
+        time = "00:23"
+        turnId = "turn-5"
+        cat = "culture"
+        def = "A work arrangement where successive teams of employees operate machinery throughout extended hours."
+        quote = "Giulio (00:23): '...we need to work on shifts in order to achieve some goals... I started working at six.'"
+        es = "lavoro su turni"
     }
-    "annotate" = @{
-        word = "annotate"
-        ipa = "/ˈæn.ə.teɪt/"
+    "unwind" = @{
+        word = "unwind"
+        ipa = "/ʌnˈwaɪnd/"
         pos = "verb"
-        level = "C1"
-        time = "16:00"
-        turnId = "turn-22"
-        cat = "language"
-        def = "To supply critical notes, explanatory tags, and vocabulary definitions directly alongside a text."
-        quote = "Louie (16:00): '...as we are talking now, it is annotating, it is writing down the notes...'"
-        es = "anotar / glosar"
+        level = "B2"
+        time = "02:04"
+        turnId = "turn-11"
+        cat = "emotion"
+        def = "To release tension, decompress, and relax peacefully after a strenuous workday."
+        quote = "Giulio (02:04): 'Then I came home, I had one hour to relax a little bit... to unwind.'"
+        es = "rilassarsi / staccare la spina"
     }
-    "serendipity" = @{
-        word = "serendipity"
-        ipa = "/ˌser.ənˈdɪp.ə.ti/"
+    "tier-list" = @{
+        word = "tier list"
+        ipa = "/tɪər lɪst/"
+        pos = "noun"
+        level = "B2"
+        time = "02:32"
+        turnId = "turn-14"
+        cat = "culture"
+        def = "A visual ranking system categorizing items into hierarchical grades from S (supreme) down to D."
+        quote = "Louie (02:32): 'Here we have the tier list... this is S tier, this is A tier, this is B tier.'"
+        es = "classifica per livelli / graduatoria"
+    }
+    "ranking" = @{
+        word = "ranking"
+        ipa = "/ˈræŋ.kɪŋ/"
+        pos = "noun"
+        level = "B2"
+        time = "02:32"
+        turnId = "turn-14"
+        cat = "language"
+        def = "The positional arrangement of choices based on comparative quality, merit, or personal preference."
+        quote = "Louie (02:32): 'They put it onto the ranking, right? They rank it.'"
+        es = "valutazione / graduatoria"
+    }
+    "takeaway" = @{
+        word = "takeaway"
+        ipa = "/ˈteɪk.ə.weɪ/"
+        pos = "noun"
+        level = "B2"
+        time = "05:46"
+        turnId = "turn-31"
+        cat = "culinary"
+        def = "Prepared food ordered and purchased from an eatery to be eaten elsewhere rather than on premises."
+        quote = "Giulio (05:46): 'There is a place that is five kilometers from my home that is only for takeaway.'"
+        es = "cibo da asporto"
+    }
+    "brioche-bun" = @{
+        word = "brioche bun"
+        ipa = "/ˈbriː.ɒʃ bʌn/"
+        pos = "noun"
+        level = "B2"
+        time = "05:46"
+        turnId = "turn-31"
+        cat = "culinary"
+        def = "A rich, tender bread roll made with butter and eggs, prized for gourmet burgers."
+        quote = "Giulio (05:46): 'They do their own bread, their own buns, so it is really good.'"
+        es = "panino artigianale per hamburger"
+    }
+    "crunchy" = @{
+        word = "crunchy"
+        ipa = "/ˈkrʌn.tʃi/"
+        pos = "adjective"
+        level = "B2"
+        time = "08:49"
+        turnId = "turn-47"
+        cat = "culinary"
+        def = "Making a sharp, crisp sound when crushed or bitten; brittle in texture."
+        quote = "Giulio (08:49): '...sometimes they are too crunchy, and when you bite them, it is like exploding.'"
+        es = "croccante / friabile"
+    }
+    "hit-or-miss" = @{
+        word = "hit or miss"
+        ipa = "/hɪt ɔː mɪs/"
+        pos = "idiom"
+        level = "C1"
+        time = "09:25"
+        turnId = "turn-49"
+        cat = "culinary"
+        def = "Unpredictable in quality and outcome; occasionally very good but often disappointing."
+        quote = "Louie (09:25): 'Yeah, we say it is hit or miss... it depends on who cooks it.'"
+        es = "un terno al lotto / a fortuna"
+    }
+    "destination" = @{
+        word = "destination"
+        ipa = "/ˌdes.tɪˈneɪ.ʃən/"
+        pos = "noun"
+        level = "B2"
+        time = "09:54"
+        turnId = "turn-52"
+        cat = "culture"
+        def = "The predetermined place to which someone is journeying for leisure or discovery."
+        quote = "Giulio (09:54): 'Let us try with the holiday destinations.'"
+        es = "meta di vacanza / destinazione"
+    }
+    "coastal" = @{
+        word = "coastal"
+        ipa = "/ˈkəʊ.stəl/"
+        pos = "adjective"
+        level = "B2"
+        time = "10:21"
+        turnId = "turn-53"
+        cat = "culture"
+        def = "Situated near or bordering the sea or ocean coastline."
+        quote = "Giulio (10:21): 'I have both the beach and the mountain nearby in my area...'"
+        es = "costiero / litoraneo"
+    }
+    "alpine-trek" = @{
+        word = "alpine trek"
+        ipa = "/ˈæl.paɪn trek/"
+        pos = "noun"
+        level = "B2"
+        time = "10:56"
+        turnId = "turn-56"
+        cat = "culture"
+        def = "A strenuous long-distance hike across mountainous forest trails and elevated terrain."
+        quote = "Giulio (10:56): 'I love taking long walks, treks in the forests, in nature... surrounded by trees and waterfalls.'"
+        es = "escursione alpina / trekking"
+    }
+    "cuisine" = @{
+        word = "cuisine"
+        ipa = "/kwɪˈziːn/"
+        pos = "noun"
+        level = "B2"
+        time = "10:56"
+        turnId = "turn-56"
+        cat = "culinary"
+        def = "A characteristic style or tradition of culinary preparation associated with a distinct region."
+        quote = "Giulio (10:56): 'In the mountains, the cuisine is, in my opinion, the best.'"
+        es = "cucina tipica / gastronomia"
+    }
+    "alps" = @{
+        word = "Alps"
+        ipa = "/ælps/"
+        pos = "proper noun"
+        level = "B2"
+        time = "11:58"
+        turnId = "turn-58"
+        cat = "culture"
+        def = "The magnificent mountain range system of south-central Europe bordering northern Italy."
+        quote = "Giulio (11:58): 'We have the Alps... great mountains.'"
+        es = "le Alpi"
+    }
+    "pub-crawl" = @{
+        word = "pub crawl"
+        ipa = "/pʌb krɔːl/"
+        pos = "noun"
+        level = "C1"
+        time = "13:23"
+        turnId = "turn-66"
+        cat = "culture"
+        def = "The traditional British social custom of visiting and having a drink at multiple successive pubs in one evening."
+        quote = "Louie (13:23): 'Do you know what we call it? We call it a pub crawl... Oxford has a legendary pub crawl.'"
+        es = "giro dei pub / tour dei locali"
+    }
+    "bacaro" = @{
+        word = "bàcaro"
+        ipa = "/ˈbaː.ka.ro/"
+        pos = "noun"
+        level = "C1"
+        time = "14:26"
+        turnId = "turn-74"
+        cat = "culture"
+        def = "A traditional, rustic Venetian tavern serving local house wines and artisanal small bites."
+        quote = "Giulio (14:26): 'There is something similar in Venice. We have these small wine shops that are called bàcaro...'"
+        es = "bàcaro veneziano (osteria tipica)"
+    }
+    "cicchetti" = @{
+        word = "cicchetti"
+        ipa = "/tʃiˈket.ti/"
+        pos = "noun"
+        level = "C1"
+        time = "14:26"
+        turnId = "turn-74"
+        cat = "culinary"
+        def = "Traditional Venetian savory bite-sized appetizers served on crusty bread in bàcari."
+        quote = "Giulio (14:26): 'You can walk from one bàcaro to another, tasting wine and eating finger food...'"
+        es = "cicchetti veneziani (stuzzichini)"
+    }
+    "finger-food" = @{
+        word = "finger food"
+        ipa = "/ˈfɪŋ.ɡə fʊd/"
+        pos = "noun"
+        level = "B2"
+        time = "14:26"
+        turnId = "turn-74"
+        cat = "culinary"
+        def = "Hors d'oeuvres or small snacks designed to be eaten comfortably with the hands."
+        quote = "Giulio (14:26): '...tasting wine, eating some finger food, let us say.'"
+        es = "finger food / antipasti da mangiare con le mani"
+    }
+    "traffic-flow" = @{
+        word = "traffic flow"
+        ipa = "/ˈtræf.ɪk fləʊ/"
+        pos = "noun"
+        level = "B2"
+        time = "15:17"
+        turnId = "turn-76"
+        cat = "culture"
+        def = "The density and movement of vehicular and bicycle transport along municipal thoroughfares."
+        quote = "Giulio (15:17): 'It is nice to ride the bike in Rome, even if the traffic sometimes is quite wild.'"
+        es = "scorrimento del traffico"
+    }
+    "colorful-language" = @{
+        word = "colorful language"
+        ipa = "/ˈkʌl.ə.fəl ˈlæŋ.ɡwɪdʒ/"
+        pos = "idiom"
+        level = "C1"
+        time = "16:27"
+        turnId = "turn-80"
+        cat = "language"
+        def = "A polite euphemism for expressive swearing, coarse colloquialisms, or heated profanity."
+        quote = "Louie (16:27): 'And the language they used, wow, very colorful!'"
+        es = "linguaggio colorito / imprecazioni"
+    }
+    "permanent-holiday" = @{
+        word = "permanent holiday"
+        ipa = "/ˈpɜː.mə.nənt ˈhɒl.ə.deɪ/"
+        pos = "phrase"
+        level = "B2"
+        time = "17:40"
+        turnId = "turn-87"
+        cat = "culture"
+        def = "Living in an idyllic rural setting that feels like a perpetual vacation retreat."
+        quote = "Giulio (17:40): 'I live in the countryside, so I would say it is my permanent holiday... enjoying the silence.'"
+        es = "vacanza perenne / rifugio tranquillo"
+    }
+    "countryside" = @{
+        word = "countryside"
+        ipa = "/ˈkʌn.tri.saɪd/"
+        pos = "noun"
+        level = "B2"
+        time = "17:40"
+        turnId = "turn-87"
+        cat = "culture"
+        def = "Rural land, meadows, and rustic villages outside large industrial metropolitan centers."
+        quote = "Giulio (17:40): 'I like where I live in the countryside... taking a walk outside and enjoying the silence.'"
+        es = "campagna / territorio rurale"
+    }
+    "lock-the-door" = @{
+        word = "lock the door"
+        ipa = "/lɒk ðə dɔːr/"
+        pos = "phrase"
+        level = "B2"
+        time = "18:16"
+        turnId = "turn-90"
+        cat = "culture"
+        def = "To secure an entrance bolt against unauthorized entry; a measure of community trust."
+        quote = "Louie (18:16): 'In Oxford countryside, we never locked the doors growing up... do you lock your doors?'"
+        es = "chiudere a chiave"
+    }
+    "play-it-safe" = @{
+        word = "play it safe"
+        ipa = "/pleɪ ɪt seɪf/"
+        pos = "idiom"
+        level = "C1"
+        time = "20:36"
+        turnId = "turn-96"
+        cat = "emotion"
+        def = "To adopt a cautious, conservative stance and avoid bold risks or audacious claims."
+        quote = "Louie (20:36): 'Are you just playing it safe? Are you just being safe?'"
+        es = "non rischiare / andare sul sicuro"
+    }
+    "invisibility" = @{
+        word = "invisibility"
+        ipa = "/ɪnˌvɪz.əˈbɪl.ə.ti/"
+        pos = "noun"
+        level = "B2"
+        time = "21:21"
+        turnId = "turn-100"
+        cat = "philosophy"
+        def = "The supernatural state of being entirely imperceptible to human visual sight."
+        quote = "Giulio (21:21): 'Invisibility... it could be useful sometimes to disappear and understand how people behave when you are not present.'"
+        es = "invisibilità"
+    }
+    "disappear" = @{
+        word = "disappear"
+        ipa = "/ˌdɪs.əˈpɪər/"
+        pos = "verb"
+        level = "B2"
+        time = "21:21"
+        turnId = "turn-100"
+        cat = "philosophy"
+        def = "To vanish quietly from view or presence without leaving trace."
+        quote = "Giulio (21:21): 'It could be useful sometimes to disappear...'"
+        es = "svanire / scomparire"
+    }
+    "stealthy" = @{
+        word = "stealthy"
+        ipa = "/ˈstel.θi/"
+        pos = "adjective"
+        level = "C1"
+        time = "21:57"
+        turnId = "turn-101"
+        cat = "language"
+        def = "Behaving with quiet, deliberate caution to avoid detection or alert."
+        quote = "Louie (21:57): 'Yes, you could be stealthy, right? You could sneak.'"
+        es = "furtivo / cauto"
+    }
+    "espionage" = @{
+        word = "espionage"
+        ipa = "/ˈes.pi.ə.nɑːʒ/"
         pos = "noun"
         level = "C2"
-        time = "16:33"
-        turnId = "turn-28"
-        cat = "philosophy"
-        def = "The fortunate occurrence of discovering wonderful or valuable things purely by happy accident."
-        quote = "Louie (16:33): 'So for example, serendipity, luck, right? This is another word for luck. You can see when it was said...'"
-        es = "serendipia / casualidad afortunada"
-    }
-    "competency" = @{
-        word = "competency"
-        ipa = "/ˈkɒm.pɪ.tən.si/"
-        pos = "noun"
-        level = "B2"
-        time = "16:33"
-        turnId = "turn-28"
-        cat = "language"
-        def = "The proven ability, skill, and linguistic knowledge needed to execute communicative tasks effectively."
-        quote = "Louie (16:33): '...you know, on the IELTS grading competency, and you can see what level the word is.'"
-        es = "competencia lingüística"
-    }
-    "contingency" = @{
-        word = "contingency"
-        ipa = "/kənˈtɪn.dʒən.si/"
-        pos = "noun"
-        level = "C1"
-        time = "21:01"
-        turnId = "turn-54"
-        cat = "culture"
-        def = "A planned provision or backup procedure designed to manage unforeseen technical obstacles."
-        quote = "Louie (21:01): 'I have planned for that contingency, so let me just quickly sign in...'"
-        es = "plan de contingencia / respaldo"
-    }
-    "firewall" = @{
-        word = "firewall"
-        ipa = "/ˈfaɪə.wɔːl/"
-        pos = "noun"
-        level = "B2"
-        time = "21:04"
-        turnId = "turn-57"
-        cat = "culture"
-        def = "A digital security boundary filtering network traffic to safeguard enterprise IT infrastructure."
-        quote = "Louie (21:04): '...there are many businesses that have firewall protection and stuff like that.'"
-        es = "cortafuegos de seguridad"
-    }
-    "abstract-talking" = @{
-        word = "abstract talking"
-        ipa = "/ˈæb.strækt ˈtɔː.kɪŋ/"
-        pos = "noun"
-        level = "C1"
-        time = "22:58"
-        turnId = "turn-62"
-        cat = "language"
-        def = "Discourse centering on intangible ideas, moral concepts, and theories rather than physical objects."
-        quote = "Louie (22:58): 'It requires abstract talking, following instructions, and working together as a team against the clock.'"
-        es = "conversación abstracta"
-    }
-    "under-pressure" = @{
-        word = "under pressure"
-        ipa = "/ˈʌn.dər ˈpreʃ.ər/"
-        pos = "idiom"
-        level = "B2"
-        time = "22:58"
-        turnId = "turn-62"
-        cat = "culture"
-        def = "Performing a mental or communicative task in circumstances characterized by urgency and time constraints."
-        quote = "Louie (22:58): '...you will notice that your English is great because you will have had stress on your side.'"
-        es = "bajo presión"
-    }
-    "spherical" = @{
-        word = "spherical"
-        ipa = "/ˈsfer.ɪ.kəl/"
-        pos = "adjective"
-        level = "B2"
-        time = "25:40"
-        turnId = "turn-86"
-        cat = "culinary"
-        def = "Possessing the three-dimensional geometric form of a globe or ball."
-        quote = "Giulio (25:40): 'It is beef that you shape it round and it is not a hamburger... it is spherical.'"
-        es = "esférico / redondo"
-    }
-    "minced" = @{
-        word = "minced"
-        ipa = "/mɪnst/"
-        pos = "adjective"
-        level = "B2"
-        time = "26:40"
+        time = "21:57"
         turnId = "turn-101"
-        cat = "culinary"
-        def = "Meat that has been finely ground or chopped into tiny uniform fragments by a mincer."
-        quote = "Louie (26:40): 'So the word we use for how meatballs are made is they are minced.'"
-        es = "picado (carne picada)"
-    }
-    "mangrove" = @{
-        word = "mangrove"
-        ipa = "/ˈmæŋ.ɡrəʊv/"
-        pos = "noun"
-        level = "B2"
-        time = "27:44"
-        turnId = "turn-106"
         cat = "culture"
-        def = "A tropical coastal shrub or tree growing in brackish water with intertwined aerial root systems."
-        quote = "Louie (27:44): 'It is from India, but it is in other tropical countries... it grows in mangroves.'"
-        es = "manglar"
+        def = "The systematic practice of spying or using covert intelligence to gather information."
+        quote = "Louie (21:57): 'Do you know the word espionage? To spy?'"
+        es = "spionaggio"
     }
-    "pastrami" = @{
-        word = "pastrami"
-        ipa = "/pæˈstrɑː.mi/"
+    "fly-on-the-wall" = @{
+        word = "fly on the wall"
+        ipa = "/flaɪ ɒn ðə wɔːl/"
+        pos = "idiom"
+        level = "C2"
+        time = "22:12"
+        turnId = "turn-103"
+        cat = "language"
+        def = "An unnoticed observer who witnesses events and conversations without participating."
+        quote = "Louie (22:12): 'You could be a fly on the wall... no one knows you are there, but you hear everything.'"
+        es = "osservatore invisibile"
+    }
+    "time-travel" = @{
+        word = "time travel"
+        ipa = "/taɪm ˈtræv.əl/"
         pos = "noun"
         level = "B2"
-        time = "28:27"
-        turnId = "turn-114"
-        cat = "culinary"
-        def = "Highly seasoned cured beef brisket that is smoked and steamed, celebrated in classic New York delis."
-        quote = "Louie (28:27): 'This is a New York sandwich, famous for having pastrami meat in it.'"
-        es = "pastrami"
+        time = "22:40"
+        turnId = "turn-106"
+        cat = "philosophy"
+        def = "The hypothetical movement backward or forward through temporal points of history."
+        quote = "Giulio (22:40): 'Time travel breaks the rules... that is exactly S-tier because you are changing history.'"
+        es = "viaggio nel tempo"
     }
-    "cider" = @{
-        word = "cider"
-        ipa = "/ˈsaɪ.dər/"
-        pos = "noun"
-        level = "B2"
-        time = "28:28"
-        turnId = "turn-118"
-        cat = "culinary"
-        def = "A fermented or freshly pressed juice beverage crafted exclusively from pressed apples."
-        quote = "Louie (28:28): '...this is the most famous fruit in the world. You can make cider out of it.'"
-        es = "sidra"
+    "meddle" = @{
+        word = "meddle"
+        ipa = "/ˈmed.əl/"
+        pos = "verb"
+        level = "C1"
+        time = "23:32"
+        turnId = "turn-109"
+        cat = "philosophy"
+        def = "To interfere impertinently or intrude in matters and affairs that are not one's concern."
+        quote = "Louie (23:32): 'Do you know what we call that when you change things in other people\'s lives? We call it meddling.'"
+        es = "ficcare il naso / immischiarsi"
     }
-    "stracciatella" = @{
-        word = "stracciatella"
-        ipa = "/ˌstrætʃ.əˈtel.ə/"
+    "meddling" = @{
+        word = "meddling"
+        ipa = "/ˈmed.lɪŋ/"
         pos = "noun"
         level = "C1"
-        time = "28:48"
-        turnId = "turn-126"
-        cat = "culinary"
-        def = "An Italian gelato preparation featuring sweet cream studded with irregular fine ribbons of dark chocolate."
-        quote = "Giulio (28:48): 'Stracciatella... a frozen gelato ice cream.'"
-        es = "stracciatella"
-    }
-    "gelato" = @{
-        word = "gelato"
-        ipa = "/dʒəˈlɑː.təʊ/"
-        pos = "noun"
-        level = "B2"
-        time = "29:04"
-        turnId = "turn-132"
-        cat = "culinary"
-        def = "Artisanal Italian frozen dessert with lower fat content and slower churning, producing extraordinary density."
-        quote = "Louie (29:04): 'Gelato, yeah, very good! Italian ice cream.'"
-        es = "helado artesanal italiano"
-    }
-    "bagel" = @{
-        word = "bagel"
-        ipa = "/ˈbeɪ.ɡəl/"
-        pos = "noun"
-        level = "B2"
-        time = "29:28"
-        turnId = "turn-141"
-        cat = "culinary"
-        def = "A dense, ring-shaped bread roll boiled briefly in hot water before baking to yield a crisp exterior."
-        quote = "Giulio (29:28): 'It is like a donut, right? But not sweet, it is breaded...'"
-        es = "bagel"
+        time = "23:32"
+        turnId = "turn-109"
+        cat = "philosophy"
+        def = "Unwarranted, intrusive tampering in private affairs or historical consequences."
+        quote = "Louie (23:32): 'He is meddling in my business, meddling in my affairs...'"
+        es = "ingerenza / intromissione"
     }
     "suspicious" = @{
         word = "suspicious"
         ipa = "/səˈspɪʃ.əs/"
         pos = "adjective"
         level = "B2"
-        time = "31:43"
-        turnId = "turn-155"
+        time = "28:35"
+        turnId = "turn-124"
         cat = "emotion"
-        def = "Having or showing a cautious distrust of someone or something; doubtful of integrity."
-        quote = "Giulio (31:43): 'When you don't trust what someone is telling you... when something looks suspicious.'"
-        es = "sospechoso / receloso"
+        def = "Arousing mistrust, dubious question, and wariness regarding truthfulness."
+        quote = "Giulio (28:35): 'The behavior of these people is completely suspicious... at first, they completely denied the fact.'"
+        es = "sospetto / diffidente"
     }
-    "attached" = @{
-        word = "attached"
-        ipa = "/əˈtætʃt/"
-        pos = "adjective"
-        level = "B2"
-        time = "31:51"
-        turnId = "turn-163"
-        cat = "emotion"
-        def = "Bound to someone or something by deep personal affection, loyalty, or emotional reliance."
-        quote = "Giulio (31:51): 'I think this is when you get attached to something or someone and develop feelings.'"
-        es = "apegado / encariñado"
-    }
-    "infatuated" = @{
-        word = "infatuated"
-        ipa = "/ɪnˈfætʃ.u.eɪ.tɪd/"
-        pos = "adjective"
-        level = "C2"
-        time = "32:19"
-        turnId = "turn-168"
-        cat = "emotion"
-        def = "Possessed with an unreasoning or shallow, all-consuming romantic passion or admiration."
-        quote = "Louie (32:19): 'In love? Infatuated?'"
-        es = "encaprichado / obnubilado"
-    }
-    "affectionate" = @{
-        word = "affectionate"
-        ipa = "/əˈfek.ʃən.ət/"
-        pos = "adjective"
-        level = "C1"
-        time = "32:48"
-        turnId = "turn-173"
-        cat = "emotion"
-        def = "Readily expressing warmth, tenderness, and fond attachment through comforting gestures and kind words."
-        quote = "Louie (32:48): 'Affectionate is just showing someone that you like them... animals can be affectionate too.'"
-        es = "afectuoso / cariñoso"
-    }
-    "apologetic" = @{
-        word = "apologetic"
-        ipa = "/əˌpɒl.əˈdʒet.ɪk/"
-        pos = "adjective"
-        level = "C1"
-        time = "33:31"
-        turnId = "turn-176"
-        cat = "emotion"
-        def = "Readily and politely expressing sincere regret for an unintentional oversight, showing emotional maturity."
-        quote = "Louie (33:31): 'Apologetic is when you apologize politely... he knocked over the jar, but he was very apologetic.'"
-        es = "disculpatorio / considerado"
-    }
-    "pathetic" = @{
-        word = "pathetic"
-        ipa = "/pəˈθet.ɪk/"
-        pos = "adjective"
-        level = "B2"
-        time = "35:09"
-        turnId = "turn-182"
-        cat = "emotion"
-        def = "Arousing contempt, miserable pity, or disdain; strikingly distinct from dignified courtesy."
-        quote = "Louie (35:09): 'It is good, it is not needy or pathetic... it is just polite.'"
-        es = "patético / lamentable"
-    }
-    "fomo" = @{
-        word = "FOMO"
-        ipa = "/ˈfəʊ.məʊ/"
+    "trap-cage" = @{
+        word = "trap cage"
+        ipa = "/træp keɪdʒ/"
         pos = "noun"
         level = "B2"
-        time = "36:31"
-        turnId = "turn-194"
-        cat = "emotion"
-        def = "Fear Of Missing Out; social apprehension that peers are experiencing rewarding events in one's absence."
-        quote = "Giulio (36:31): 'FOMO, fear of missing out, or envy...'"
-        es = "miedo a perderse algo (FOMO)"
-    }
-    "envious" = @{
-        word = "envious"
-        ipa = "/ˈen.vi.əs/"
-        pos = "adjective"
-        level = "B2"
-        time = "36:47"
-        turnId = "turn-198"
-        cat = "emotion"
-        def = "Experiencing bitter resentment or covetous longing aroused by another's prosperity or advantages."
-        quote = "Louie (36:47): 'Envious of your neighbours... something good happens to them and you wish you had it.'"
-        es = "envidioso"
-    }
-    "thief-of-joy" = @{
-        word = "thief of joy"
-        ipa = "/θiːf əv dʒɔɪ/"
-        pos = "idiom"
-        level = "C2"
-        time = "37:21"
-        turnId = "turn-203"
-        cat = "philosophy"
-        def = "A famous moral adage warning that comparison and envy deplete one's capacity for personal happiness."
-        quote = "Louie (37:21): 'In England, we say envy is the thief of joy. It means comparing yourself steals your joy.'"
-        es = "el ladrón de la dicha (la envidia)"
-    }
-    "embarrassed" = @{
-        word = "embarrassed"
-        ipa = "/ɪmˈbær.əst/"
-        pos = "adjective"
-        level = "B2"
-        time = "37:20"
-        turnId = "turn-201"
-        cat = "emotion"
-        def = "Experiencing awkward discomfort, self-consciousness, or fluster following a public blunder."
-        quote = "Giulio (37:20): 'Embarrassment, embarrassed... when you rip your trousers in front of everyone.'"
-        es = "avergonzado"
-    }
-    "amazed" = @{
-        word = "amazed"
-        ipa = "/əˈmeɪzd/"
-        pos = "adjective"
-        level = "B2"
-        time = "37:21"
-        turnId = "turn-203"
-        cat = "emotion"
-        def = "Overwhelmed with sudden astonishment, wonder, and delightful awe."
-        quote = "Louie (37:21): 'This word is when you see something and you cannot believe it: amazed!'"
-        es = "asombrado / fascinado"
-    }
-    "panicked" = @{
-        word = "panicked"
-        ipa = "/ˈpæn.ɪkt/"
-        pos = "adjective"
-        level = "B2"
-        time = "37:21"
-        turnId = "turn-203"
-        cat = "emotion"
-        def = "Overcome by acute, paralyzing dread or disorganized fear in response to perceived peril."
-        quote = "Louie (37:21): 'This is when something happens, you are stressed and scared: panicked.'"
-        es = "en pánico / alarmado"
-    }
-    "abstract-concept" = @{
-        word = "abstract concept"
-        ipa = "/ˈæb.strækt ˈkɒn.sept/"
-        pos = "noun"
-        level = "C1"
-        time = "39:31"
-        turnId = "turn-207"
-        cat = "philosophy"
-        def = "A generalization, principle, or philosophical notion detached from physical, tangible realities."
-        quote = "Giulio (39:31): 'Can you give me an example of what kind of words would appear in abstract concepts?'"
-        es = "concepto abstracto"
-    }
-    "innocence" = @{
-        word = "innocence"
-        ipa = "/ˈɪn.ə.səns/"
-        pos = "noun"
-        level = "C1"
-        time = "41:07"
-        turnId = "turn-216"
-        cat = "philosophy"
-        def = "Moral guilelessness, purity of intent, and an inherent incapacity to imagine malice in others."
-        quote = "Giulio (41:07): 'When you are a kid and you are incapable of seeing the bad side of people... innocence.'"
-        es = "inocencia"
-    }
-    "turn-the-other-cheek" = @{
-        word = "turn the other cheek"
-        ipa = "/tɜːn ðiː ˈʌð.ər tʃiːk/"
-        pos = "idiom"
-        level = "C2"
-        time = "41:56"
-        turnId = "turn-217"
-        cat = "philosophy"
-        def = "To respond to insult, offense, or mistreatment with patient non-violence and gracious forgiveness."
-        quote = "Louie (41:56): 'Turn the other cheek... forgive.'"
-        es = "poner la otra mejilla"
-    }
-    "forgiveness" = @{
-        word = "forgiveness"
-        ipa = "/fəˈɡɪv.nəs/"
-        pos = "noun"
-        level = "B2"
-        time = "42:00"
-        turnId = "turn-218"
-        cat = "philosophy"
-        def = "The deliberate, ethical decision to renounce bitterness, vengeance, or anger toward an offender."
-        quote = "Giulio (42:00): 'Turned the other cheek, but to forgive... forgiveness.'"
-        es = "perdón"
-    }
-    "stubborn" = @{
-        word = "stubborn"
-        ipa = "/ˈstʌb.ən/"
-        pos = "adjective"
-        level = "B2"
-        time = "42:15"
-        turnId = "turn-223"
-        cat = "emotion"
-        def = "Unreasonably obstinate and firmly entrenched in one's perspective, resisting all persuasion."
-        quote = "Giulio (42:15): 'When you are very stubborn and have a strong opinion about yourself...'"
-        es = "terco / obstinado"
-    }
-    "pride" = @{
-        word = "pride"
-        ipa = "/praɪd/"
-        pos = "noun"
-        level = "C1"
-        time = "43:05"
-        turnId = "turn-226"
-        cat = "philosophy"
-        def = "Honorable self-respect and dignity in quality craftsmanship, distinctly separated from vanity."
-        quote = "Louie (43:05): 'Pride is when you are proud of yourself... taking pride in your work.'"
-        es = "orgullo / amor propio"
-    }
-    "take-pride-in" = @{
-        word = "take pride in"
-        ipa = "/teɪk praɪd ɪn/"
-        pos = "idiom"
-        level = "C1"
-        time = "43:53"
-        turnId = "turn-233"
-        cat = "philosophy"
-        def = "To derive sincere satisfaction from dedicating meticulous care and ethical effort to one's duties."
-        quote = "Louie (43:53): 'You can take pride in your work, right? You respect your process, you really try hard...'"
-        es = "enorgullecerse de / poner esmero en"
-    }
-    "pride-of-lions" = @{
-        word = "pride of lions"
-        ipa = "/praɪd əv ˈlaɪ.ənz/"
-        pos = "noun"
-        level = "C2"
-        time = "44:54"
-        turnId = "turn-235"
-        cat = "language"
-        def = "The conventional English collective noun designating a family or social group of lions."
-        quote = "Louie (44:54): 'We call a family of lions a pride. Nothing to do with emotion!'"
-        es = "manada de leones (pride)"
-    }
-    "murder-of-crows" = @{
-        word = "murder of crows"
-        ipa = "/ˈmɜː.dər əv krəʊz/"
-        pos = "noun"
-        level = "C2"
-        time = "45:14"
-        turnId = "turn-240"
-        cat = "language"
-        def = "The evocative traditional collective noun specifically designating a flock of black crows."
-        quote = "Giulio (45:14): 'A murder of crows, right?' Louie: 'Exactly, yeah!'"
-        es = "bandada de cuervos (murder)"
-    }
-    "gaggle-of-geese" = @{
-        word = "gaggle of geese"
-        ipa = "/ˈɡæɡ.əl əv ɡiːs/"
-        pos = "noun"
-        level = "C2"
-        time = "45:18"
-        turnId = "turn-243"
-        cat = "language"
-        def = "The classic English collective term for a terrestrial flock of noisy, rambling geese."
-        quote = "Louie (45:18): 'A gaggle of geese... we have these weird names for everything, it is really strange.'"
-        es = "bandada de gansos (gaggle)"
-    }
-    "goose-and-gander" = @{
-        word = "goose and gander"
-        ipa = "/ɡuːs ænd ˈɡæn.dər/"
-        pos = "idiom"
-        level = "C2"
-        time = "45:18"
-        turnId = "turn-243"
-        cat = "philosophy"
-        def = "A classic proverb stating that whatever rule or privilege is fair for one person must apply equally to another."
-        quote = "Louie (45:18): 'What is good for the goose is good for the gander... what is good for one person is good for the group.'"
-        es = "lo que es bueno para el ganso es bueno para la gansa"
-    }
-    "conscience" = @{
-        word = "conscience"
-        ipa = "/ˈkɒn.ʃəns/"
-        pos = "noun"
-        level = "C1"
-        time = "46:08"
-        turnId = "turn-247"
-        cat = "philosophy"
-        def = "The inner intuitive moral sensibility distinguishing right from wrong in human conduct."
-        quote = "Louie (46:08): 'Conscience... your inner monologue, your moral thoughts.'"
-        es = "conciencia moral"
-    }
-    "inner-monologue" = @{
-        word = "inner monologue"
-        ipa = "/ˈɪn.ər ˈmɒn.ə.lɒɡ/"
-        pos = "noun"
-        level = "C1"
-        time = "46:43"
-        turnId = "turn-250"
-        cat = "philosophy"
-        def = "The continuous internal stream of spoken consciousness and contemplative thoughts in the mind."
-        quote = "Louie (46:43): 'In your head, we call it the inner monologue, your thoughts...'"
-        es = "monólogo interior"
-    }
-    "look-forward-to" = @{
-        word = "look forward to"
-        ipa = "/lʊk ˈfɔː.wəd tuː/"
-        pos = "phrasal verb"
-        level = "B2"
-        time = "47:47"
-        turnId = "turn-252"
+        time = "28:21"
+        turnId = "turn-123"
         cat = "culture"
-        def = "To anticipate future pleasurable pursuits with genuine eagerness and joy."
-        quote = "Giulio (47:47): 'This is the sort of things I look forward to doing in my spare time.'"
-        es = "esperar con ilusión / tener ganas de"
+        def = "A self-locking enclosure designed to capture animals unawares."
+        quote = "Giulio (28:21): 'It is actually a trap, the kind of cage that is locking itself when the animal gets inside.'"
+        es = "gabbia-trappola"
     }
-    "keep-active" = @{
-        word = "keep active"
-        ipa = "/kiːp ˈæk.tɪv/"
+    "deny-the-fact" = @{
+        word = "deny the fact"
+        ipa = "/dɪˈnaɪ ðə fækt/"
         pos = "phrase"
         level = "B2"
-        time = "47:47"
-        turnId = "turn-252"
-        cat = "culture"
-        def = "To maintain regular dynamic cardiovascular fitness through sports, hiking, and movement."
-        quote = "Giulio (47:47): 'I do cycling, I play padel... basically I like to keep myself active.'"
-        es = "mantenerse activo"
+        time = "28:35"
+        turnId = "turn-124"
+        cat = "language"
+        def = "To refuse to acknowledge or admit a verified truth or occurrence."
+        quote = "Giulio (28:35): 'In the beginning, they completely denied the fact... then they admitted there was a cat.'"
+        es = "negare l'evidenza"
     }
-    "revitalize" = @{
-        word = "revitalize"
-        ipa = "/riːˈvaɪ.təl.aɪz/"
+    "snare" = @{
+        word = "snare"
+        ipa = "/sneər/"
+        pos = "noun"
+        level = "C2"
+        time = "30:30"
+        turnId = "turn-130"
+        cat = "culture"
+        def = "A wire or cord loop noose trap designed to entangle passing wild animals."
+        quote = "Louie (30:30): 'In Vietnam they use a snare... it is not a cage, but something that grabs the animal.'"
+        es = "cappio / trappola a laccio"
+    }
+    "neighborhood-watch" = @{
+        word = "neighborhood watch"
+        ipa = "/ˈneɪ.bə.hʊd wɒtʃ/"
+        pos = "noun"
+        level = "C1"
+        time = "30:49"
+        turnId = "turn-133"
+        cat = "culture"
+        def = "A community civilian initiative where residents collaborate to deter crime and safeguard property."
+        quote = "Louie (30:49): 'Do you have a neighborhood watch? Where neighbors look out together with cameras?'"
+        es = "controllo di vicinato"
+    }
+    "feral-cat" = @{
+        word = "feral cat"
+        ipa = "/ˈfer.əl kæt/"
+        pos = "noun"
+        level = "C1"
+        time = "31:26"
+        turnId = "turn-137"
+        cat = "culture"
+        def = "A domesticated cat that has returned to a wild state, living untamed in the outdoors."
+        quote = "Giulio (31:26): 'It is not legal in Italy to place traps unless authorized to catch feral cats to sterilize them.'"
+        es = "gatto randagio / rinselvatichito"
+    }
+    "sterilize" = @{
+        word = "sterilize"
+        ipa = "/ˈster.ə.laɪz/"
         pos = "verb"
-        level = "C1"
-        time = "50:03"
-        turnId = "turn-263"
+        level = "B2"
+        time = "31:26"
+        turnId = "turn-137"
         cat = "culture"
-        def = "To breathe vibrant new energy, economic vitality, and social life into historical townscapes."
-        quote = "Louie (50:03): '...rebuild 700-year-old buildings and put businesses in them to revitalize towns like Oxford or Buckinghamshire.'"
-        es = "revitalizar / regenerar"
+        def = "To perform a veterinary procedure rendering an animal incapable of producing offspring."
+        quote = "Giulio (31:26): 'They catch feral cats to get them sterilized, then let them back into nature.'"
+        es = "sterilizzare"
     }
-    "indie-movies" = @{
-        word = "indie movies"
-        ipa = "/ˈɪn.di ˈmuː.viz/"
-        pos = "noun"
-        level = "B2"
-        time = "54:33"
-        turnId = "turn-290"
-        cat = "cinema"
-        def = "Independent cinematic projects produced outside major Hollywood studio systems with artistic liberty."
-        quote = "Louie (54:33): 'It is like independent movies, old Vietnamese films, where you dress up and speak directly with the director.'"
-        es = "cine independiente"
-    }
-    "film-festival" = @{
-        word = "film festival"
-        ipa = "/fɪlm ˈfes.tɪ.vəl/"
-        pos = "noun"
-        level = "B2"
-        time = "55:26"
-        turnId = "turn-296"
-        cat = "cinema"
-        def = "An organized municipal celebration showcasing curated cinematic premiers with creator Q&As."
-        quote = "Giulio (55:26): 'In Spain we have the San Sebastián Film Festival in September... Brad Pitt was there, Penélope Cruz as every year.'"
-        es = "festival de cine"
-    }
-    "cinema-atmosphere" = @{
-        word = "cinema atmosphere"
-        ipa = "/ˈsɪn.ə.mə ˈæt.məs.fɪər/"
-        pos = "noun"
-        level = "C1"
-        time = "56:20"
-        turnId = "turn-299"
-        cat = "cinema"
-        def = "The sensory and communal magic of theatrical viewing: warm popcorn aroma, dark auditorium, and shared focus."
-        quote = "Giulio (56:20): 'The experience, the environment, the smell of popcorn, the bell on the stairs... it is the atmosphere, basically.'"
-        es = "atmósfera cinematográfica"
-    }
-    "unplug" = @{
-        word = "unplug"
-        ipa = "/ʌnˈplʌɡ/"
+    "roam" = @{
+        word = "roam"
+        ipa = "/rəʊm/"
         pos = "verb"
-        level = "C1"
-        time = "57:13"
-        turnId = "turn-303"
+        level = "B2"
+        time = "32:27"
+        turnId = "turn-138"
         cat = "culture"
-        def = "To deliberately disconnect from digital devices, phone alerts, and notifications to restore mental presence."
-        quote = "Giulio (57:13): 'At home I cannot stop looking at my phone... but at the cinema I can spend two hours without checking it.'"
-        es = "desconectarse de las pantallas"
+        def = "To wander freely across fields and gardens without fixed path or destination."
+        quote = "Louie (32:27): 'We say they roam the neighborhood... play with the other cats and come home.'"
+        es = "girovagare / vagare liberamente"
     }
-    "watch-list" = @{
-        word = "watch list"
-        ipa = "/ˈwɒtʃ lɪst/"
+    "mind-reading" = @{
+        word = "mind reading"
+        ipa = "/maɪnd ˈriː.dɪŋ/"
         pos = "noun"
         level = "B2"
-        time = "58:21"
-        turnId = "turn-306"
-        cat = "cinema"
-        def = "A curated personal catalog of films and documentaries scheduled for future screening."
-        quote = "Louie (58:21): 'What is on your watch list? What have you got that you want to watch?'"
-        es = "lista de películas pendientes"
+        time = "33:44"
+        turnId = "turn-146"
+        cat = "philosophy"
+        def = "The telepathic discernment of another person's unspoken private thoughts and motives."
+        quote = "Giulio (33:44): 'Maybe I would put mind reading on B and flying on C.'"
+        es = "lettura del pensiero"
     }
-    "blockbuster" = @{
-        word = "blockbuster"
-        ipa = "/ˈblɒkˌbʌs.tər/"
-        pos = "noun"
-        level = "B2"
-        time = "58:50"
-        turnId = "turn-314"
-        cat = "cinema"
-        def = "A major cinematic release commanding massive production budgets and sweeping public excitement."
-        quote = "Giulio (58:50): 'The new Hunger Games, Avengers: Doomsday... I think that is the three blockbusters of this quarter.'"
-        es = "superproducción / taquillazo"
-    }
-    "franchise" = @{
-        word = "franchise"
-        ipa = "/ˈfræn.tʃaɪz/"
-        pos = "noun"
-        level = "B2"
-        time = "59:40"
-        turnId = "turn-320"
-        cat = "cinema"
-        def = "An overarching media universe spanning sequential films, characters, and related commercial spin-offs."
-        quote = "Giulio (59:40): 'They are bringing back one of the most famous actors of this franchise, Robert Downey Jr.'"
-        es = "franquicia cinematográfica"
-    }
-    "hype" = @{
-        word = "hype"
-        ipa = "/haɪp/"
-        pos = "noun"
-        level = "B2"
-        time = "59:40"
-        turnId = "turn-320"
-        cat = "cinema"
-        def = "Intense promotional buzz and feverish public anticipation preceding a cultural milestone."
-        quote = "Giulio (59:40): 'Robert Downey Jr. returning as Doctor Doom is creating a lot of hype.'"
-        es = "expectación / bombo publicitario"
-    }
-    "front-and-center" = @{
-        word = "front and center"
-        ipa = "/frʌnt ænd ˈsen.tər/"
+    "table-the-discussion" = @{
+        word = "table the discussion"
+        ipa = "/ˈteɪ.bəl ðə dɪˈskʌʃ.ən/"
         pos = "idiom"
         level = "C1"
-        time = "01:00:03"
-        turnId = "turn-323"
-        cat = "cinema"
-        def = "Placed in the most conspicuous, dominating position of a theatrical trailer or presentation."
-        quote = "Louie (01:00:03): 'He is already there, the villain is already front and center in the trailers...'"
-        es = "en primer plano / en el foco principal"
+        time = "35:28"
+        turnId = "turn-152"
+        cat = "language"
+        def = "To postpone or suspend further debate on an issue until a future scheduled session."
+        quote = "Louie (35:28): 'To table the discussion... it means to stop talking now and talk about it on another day.'"
+        es = "rinviare la discussione / aggiornarsi"
     }
-    "draw-a-blank" = @{
-        word = "draw a blank"
-        ipa = "/drɔː ə blæŋk/"
+    "postpone" = @{
+        word = "postpone"
+        ipa = "/pəʊstˈpəʊn/"
+        pos = "verb"
+        level = "B2"
+        time = "38:48"
+        turnId = "turn-160"
+        cat = "language"
+        def = "To defer an action or deliberation to a later date due to lack of immediate readiness."
+        quote = "Giulio (38:48): 'Yeah, you are postponing a decision for another day.'"
+        es = "posticipare / rimandare"
+    }
+    "wait-till-monday" = @{
+        word = "wait till Monday"
+        ipa = "/weɪt tɪl ˈmʌn.deɪ/"
+        pos = "phrase"
+        level = "C1"
+        time = "35:54"
+        turnId = "turn-155"
+        cat = "language"
+        def = "A diplomatic management idiom advising teams to let stressful impasses rest over the weekend."
+        quote = "Louie (35:54): 'I always say, why don't we wait till Monday? It gives everyone the weekend to cool down.'"
+        es = "aggiornarsi a lunedì / far decantare"
+    }
+    "architectural-integrity" = @{
+        word = "architectural integrity"
+        ipa = "/ˌɑː.kɪˈtek.tʃər.əl ɪnˈteɡ.rə.ti/"
+        pos = "noun"
+        level = "C1"
+        time = "35:54"
+        turnId = "turn-155"
+        cat = "culture"
+        def = "Adherence to sound structural principles, historical authenticity, and safety in building design."
+        quote = "Louie (35:54): 'Architects get stressed thinking about their professional integrity...'"
+        es = "integrità architettonica"
+    }
+    "shed-light" = @{
+        word = "shed light on"
+        ipa = "/ʃed laɪt ɒn/"
         pos = "idiom"
         level = "C1"
-        time = "01:01:08"
-        turnId = "turn-332"
+        time = "39:21"
+        turnId = "turn-161"
         cat = "language"
-        def = "To experience a sudden, temporary failure of memory or vocabulary recall under focus."
-        quote = "Giulio (01:01:08): 'Louis, this is so weird. I do not know if I am nervous, but I am blank!'"
-        es = "quedarse en blanco"
+        def = "To clarify, illuminate, or provide crucial explanatory insight into a perplexing technical problem."
+        quote = "Louie (39:21): 'Have you ever heard of shed light on something? It means to clarify and highlight.'"
+        es = "fare luce su / chiarire"
     }
-    "back-catalog" = @{
-        word = "back catalog"
-        ipa = "/bæk ˈkæt.ə.lɒɡ/"
-        pos = "noun"
+    "intricate" = @{
+        word = "intricate"
+        ipa = "/ˈɪn.trɪ.kət/"
+        pos = "adjective"
         level = "C1"
-        time = "01:01:31"
-        turnId = "turn-337"
-        cat = "cinema"
-        def = "The historical archive of previous releases created by an auteur, film studio, or personal viewing history."
-        quote = "Louie (01:01:31): 'My back catalog... films from the past that I still need to watch.'"
-        es = "archivo histórico / fondo de catálogo"
-    }
-    "suppress" = @{
-        word = "suppress"
-        ipa = "/səˈpres/"
-        pos = "verb"
-        level = "C1"
-        time = "01:03:08"
-        turnId = "turn-340"
-        cat = "emotion"
-        def = "To forcibly prevent traumatic memories or painful emotions from entering conscious thought."
-        quote = "Louie (01:03:08): 'She suppressed her memories... to suppress is to push down distressing trauma.'"
-        es = "reprimir / sofocar recuerdos"
-    }
-    "slow-burner" = @{
-        word = "slow-burner"
-        ipa = "/sləʊ ˈbɜː.nər/"
-        pos = "noun"
-        level = "C1"
-        time = "01:03:38"
-        turnId = "turn-345"
-        cat = "cinema"
-        def = "A narrative or film that unfolds patiently and deliberately before unveiling its profound emotional power."
-        quote = "Louie (01:03:38): 'Sophie\'s Choice is a slow one, a bit of a slow-burner, but apparently fantastic.'"
-        es = "obra de ritmo pausado pero envolvente"
-    }
-    "bottleneck" = @{
-        word = "bottleneck"
-        ipa = "/ˈbɒt.əl.nek/"
-        pos = "noun"
-        level = "C1"
-        time = "01:06:22"
-        turnId = "turn-363"
+        time = "40:41"
+        turnId = "turn-167"
         cat = "language"
-        def = "A narrow cognitive point of congestion that restricts natural speaking flow—specifically mental translation."
-        quote = "Louie (01:06:22): 'We call it a bottleneck... we want to open that bottleneck and fill it with vocabulary!'"
-        es = "cuello de botella / traba cognitiva"
+        def = "Composed of many elaborate, interconnected components; highly detailed and complex."
+        quote = "Louie (40:41): 'Not confusing, but very intricate... intricate means detailed, with lots going on.'"
+        es = "intricato / minuzioso e complesso"
+    }
+    "vision-recognition" = @{
+        word = "vision recognition"
+        ipa = "/ˈvɪʒ.ən ˌrek.əɡˈnɪʃ.ən/"
+        pos = "noun"
+        level = "C1"
+        time = "40:42"
+        turnId = "turn-168"
+        cat = "culture"
+        def = "Optical computer vision technology scanning and verifying pharmaceutical manufacturing containers at high speeds."
+        quote = "Louie (40:42): 'It has vision recognition at so many frames, records it, and checks pharmaceutical products...'"
+        es = "visione artificiale / riconoscimento ottico"
+    }
+    "shady" = @{
+        word = "shady"
+        ipa = "/ˈʃeɪ.di/"
+        pos = "adjective"
+        level = "B2"
+        time = "40:42"
+        turnId = "turn-168"
+        cat = "culture"
+        def = "Disreputable, suspicious, or evasive in business transparency and ethics."
+        quote = "Louie (40:42): 'Imagine you are a shady guy, and the government asks you to shed light on your accounts!'"
+        es = "losco / poco trasparente"
+    }
+    "bring-to-the-table" = @{
+        word = "bring to the table"
+        ipa = "/brɪŋ tuː ðə ˈteɪ.bəl/"
+        pos = "idiom"
+        level = "C1"
+        time = "42:09"
+        turnId = "turn-171"
+        cat = "language"
+        def = "To provide valuable skills, technical expertise, or unique assets to an enterprise or collaborative team."
+        quote = "Louie (42:09): 'What do you bring to the table? It means what qualities or skills do you bring to the company?'"
+        es = "apportare valore / competenze"
+    }
+    "performance-review" = @{
+        word = "performance review"
+        ipa = "/pəˈfɔː.məns rɪˈvjuː/"
+        pos = "noun"
+        level = "B2"
+        time = "42:09"
+        turnId = "turn-171"
+        cat = "culture"
+        def = "A formal periodic evaluation of an employee's professional contributions and competency."
+        quote = "Louie (42:09): 'You may hear it in a performance review of your employees: What does he bring to the table?'"
+        es = "valutazione delle prestazioni"
+    }
+    "herding-cats" = @{
+        word = "herding cats"
+        ipa = "/ˈhɜː.dɪŋ kæts/"
+        pos = "idiom"
+        level = "C2"
+        time = "43:59"
+        turnId = "turn-175"
+        cat = "language"
+        def = "An idiom describing the exhausting, near-impossible task of directing stubborn, independent individuals."
+        quote = "Louie (43:59): 'In English we have this idiom: It is like herding cats! Impossible, chaotic...'"
+        es = "come mettere in fila i gatti (impresa impossibile)"
+    }
+    "shepherd" = @{
+        word = "shepherd"
+        ipa = "/ˈʃep.əd/"
+        pos = "noun"
+        level = "B2"
+        time = "44:11"
+        turnId = "turn-179"
+        cat = "culture"
+        def = "A rural person who watches over, guides, and protects herds of grazing sheep."
+        quote = "Louie (44:11): 'A shepherd has lots of sheep and uses a dog to guide them slowly... now imagine if they were cats!'"
+        es = "pastore"
+    }
+    "smoke-break" = @{
+        word = "smoke break"
+        ipa = "/sməʊk breɪk/"
+        pos = "noun"
+        level = "B2"
+        time = "46:13"
+        turnId = "turn-196"
+        cat = "culture"
+        def = "A short designated pause during working hours for employees to smoke outdoors."
+        quote = "Giulio (46:13): 'There are rules: one time in the morning and one time in the afternoon, just two ten-minute smoke breaks.'"
+        es = "pausa sigaretta"
+    }
+    "testing-phase" = @{
+        word = "testing phase"
+        ipa = "/ˈtes.tɪŋ feɪz/"
+        pos = "noun"
+        level = "B2"
+        time = "47:54"
+        turnId = "turn-205"
+        cat = "culture"
+        def = "The rigorous engineering stage where prototypes are tested under live operating conditions."
+        quote = "Giulio (47:54): 'We are already in the testing phase with the client, but some of the tests are not going well...'"
+        es = "fase di collaudo e test"
+    }
+    "penalty-clause" = @{
+        word = "penalty clause"
+        ipa = "/ˈpen.əl.ti klɔːz/"
+        pos = "noun"
+        level = "C1"
+        time = "49:01"
+        turnId = "turn-208"
+        cat = "culture"
+        def = "A contractual provision imposing financial penalties for failing to deliver machinery on schedule."
+        quote = "Giulio (49:01): 'There are deadlines, there are penalties... definitely crunch time.'"
+        es = "penale contrattuale per ritardo"
+    }
+    "lead-time" = @{
+        word = "lead time"
+        ipa = "/ˈliːd taɪm/"
+        pos = "noun"
+        level = "C1"
+        time = "50:59"
+        turnId = "turn-214"
+        cat = "culture"
+        def = "The total latency elapsed between placing an industrial equipment order and its final physical arrival."
+        quote = "Louie (50:59): 'The lead time on these commercial ovens is years... so I flew to Paris, picked it up, and drove back!'"
+        es = "tempi di consegna / lead time"
+    }
+    "breakneck-pace" = @{
+        word = "breakneck pace"
+        ipa = "/ˈbreɪk.nek peɪs/"
+        pos = "phrase"
+        level = "C1"
+        time = "51:11"
+        turnId = "turn-217"
+        cat = "language"
+        def = "A dangerously or exhaustingly rapid speed of work and execution."
+        quote = "Louie (51:11): '24 hours before we launched our restaurant... we washed two thousand glasses through the night!'"
+        es = "ritmo frenetico / a rotta di collo"
     }
 }
 
 # 3. Define 6 NATURAL STRENGTHS
 $naturalStrengths = @(
     @{
-        topic = "Metacognitive Linguistic Awareness"
-        time = "14:24"
-        phrase = "I feel that when I speak, I have sometimes this lack of coherence when making my phrases."
-        note = "Giulio articulated his language ambitions using sophisticated C1 metacognitive terms ('coherence', 'fluency', 'phrases')—showing impressive command of vocabulary even while analyzing areas for refinement!"
+        topic = "Engineering Project Fluency"
+        time = "00:23"
+        phrase = "We need to work on shifts in order to achieve some goals on the project. So we are trying to respect the timeline and the deadline."
+        note = "Giulio articulated his demanding factory schedule with natural technical authority, seamlessly linking 'shifts', 'timeline', and 'deadline' into an elegant explanation."
     },
     @{
-        topic = "Nuanced Emotional Perception"
-        time = "31:43"
-        phrase = "When someone doesn't tell the truth... when something looks suspicious."
-        note = "Under rapid timer pressure during the Heads Up game, Giulio quickly navigated through slang ('speechy, sus') to identify the precise C1 adjective 'suspicious'!"
+        topic = "Evocative Culinary Critique"
+        time = "08:49"
+        phrase = "Sometimes they are too crunchy, and when you bite them, it is like exploding. You are not able to eat them in a proper way."
+        note = "A vivid, tactile description of hard taco shells. Giulio captured both the physical texture and the dining frustration with spontaneous humor."
     },
     @{
-        topic = "Natural Collocations & Phrasal Verbs"
-        time = "47:47"
-        phrase = "I do cycling, I play padel... basically I like to keep myself active. I look forward to doing sports."
-        note = "Effortless, natural delivery of 'keep myself active' and the essential B2 phrasal verb 'look forward to'—flawlessly used in spontaneous conversational flow."
+        topic = "Serene Alpine Storytelling"
+        time = "10:56"
+        phrase = "I love taking long walks, treks in the forests, in nature... it is really relaxing to be surrounded by trees and waterfalls."
+        note = "Expressive nature vocabulary highlighting Giulio's personal sanctuary. The sentence cadence was calm, contemplative, and grammatically graceful."
     },
     @{
-        topic = "Evocative Sensory Storytelling"
-        time = "56:20"
-        phrase = "The experience, the environment, the smell of popcorn, the bell on the stairs... it's the atmosphere, basically."
-        note = "A vivid, multi-sensory depiction of the movie theatre. Giulio painted a genuine emotional picture with elegant cadence and atmospheric rhythm."
+        topic = "Cultural Exposition: The Venetian Bàcaro"
+        time = "14:26"
+        phrase = "We have these small wine shops called bàcaro... you walk from one to another, tasting wine and eating finger food. In the end, you don't remember when you started!"
+        note = "A wonderful cultural parallel to the English pub crawl. Giulio used humorous narrative framing to introduce local Italian heritage effortlessly."
     },
     @{
-        topic = "Deep Philosophical Reflection"
-        time = "57:13"
-        phrase = "That's something that can have my full attention for that amount of time without checking my phone."
-        note = "A perceptive critique of modern digital screen addiction. Giulio expressed an authentic, complex insight smoothly and convincingly without hesitating."
+        topic = "Principled Civic & Animal Welfare Advocacy"
+        time = "31:26"
+        phrase = "It is not legal in Italy to place those kinds of traps unless you are authorized... they are always trying to discover something in the neighborhood."
+        note = "Spoke with remarkable clarity and emotional conviction on municipal Italian animal protection laws, delivering complex legal distinctions without hesitation."
     },
     @{
-        topic = "Sophisticated Cinema Lexicon"
-        time = "01:03:33"
-        phrase = "From my back catalog, I would like to rewatch The Zone of Interest."
-        note = "Adopted Louie's phrase 'back catalog' immediately into active dialogue, showing superb conversational agility and active listening skills."
+        topic = "Visual Factory Floor Metaphors"
+        time = "48:48"
+        phrase = "On a normal project, there are two or three people around the machine... on crunch time, there are 16 people praying to have the machine for ten minutes to test their part."
+        note = "An extraordinary workplace image! Giulio brought the intensity of pharmaceutical hardware testing alive with sharp observation and humor."
     }
 )
 
 # 4. Define 6 GENTLE PHRASINGS
 $gentlePhrasings = @(
     @{
-        topic = "Office Downtime & Greetings"
-        time = "13:57"
-        said = "My dad was good... I can go home and the Escoonnade relax."
-        natural = "My day was good! I can head home, disconnect, and completely unwind."
-        note = "A gentle slip between 'day' and 'dad'—easily smoothed out. 'Disconnect and unwind' flows beautifully for an evening after office work in Valencia."
+        topic = "Early Shift Description"
+        time = "00:12"
+        said = "I started today working from, I started working at, six. So it has been tough..."
+        natural = "I was on the early shift today, starting at 6:00 AM, so it has been quite a demanding day."
+        note = "Using 'on the early shift' instantly conveys the factory schedule with natural, polished English rhythm."
     },
     @{
-        topic = "Expressing Language Ambition"
-        time = "14:24"
-        said = "Why are we here today? Well, we are here today because I would like to improve my fluency, my while speaking..."
-        natural = "I'm really keen to improve my spoken fluency and natural grammatical flow, so my thoughts connect seamlessly."
-        note = "Polishing the transition into a confident, professional statement of personal ambition."
+        topic = "Ranking Food Tiers"
+        time = "04:40"
+        said = "Because maybe a lot more meat... meat and pasta on the same level, but sushi is beef for me."
+        natural = "I am much more of a meat and pasta person—sushi is good, but it sits in B-tier for me."
+        note = "Polishing the accidental slip between 'beef' and 'B-tier' into a clean culinary ranking."
     },
     @{
-        topic = "Describing Culinary Shapes"
-        time = "25:40"
-        said = "Yeah, well, it's beef that you shape it round and it's not a hamburger... it's feric."
-        natural = "It's seasoned beef rolled into a sphere—not quite a burger, but spherical meatballs in rich tomato sauce."
-        note = "Moving from 'feric' to the elegant mathematical adjective 'spherical' to describe meatballs on pasta."
+        topic = "Alpine Gastronomy"
+        time = "10:56"
+        said = "Staying in the nature... but on the mountains, the cuisine is, in my opinion, the best."
+        natural = "Being immersed in nature is wonderful, and in my opinion, alpine cuisine is second to none."
+        note = "'Immersed in nature' and 'second to none' elevate conversational descriptions to C1/C2 mastery."
     },
     @{
-        topic = "Character & Firm Conviction"
-        time = "42:15"
-        said = "When you are very stubborn and you have a strong opinion about yourself and you really mean what you think..."
-        natural = "When you stand firm in your convictions and take genuine pride in your principles, without backing down."
-        note = "Framing stubbornness into the honorable British concept of 'taking pride in one's convictions'."
+        topic = "Investigating Suspicious Circumstances"
+        time = "28:35"
+        said = "The behavior of these people is completely suspicious... in the beginning, they completely negate the fact."
+        natural = "Their behavior was deeply suspicious—at first, they flatly denied having seen anything."
+        note = "Correcting the false friend 'negate' (*negare* in Italian) to the natural native verb 'flatly denied'."
     },
     @{
-        topic = "Sharing Weekend Passions"
-        time = "53:33"
-        said = "Yeah, we love we'll love going to cinema and that's basically how I like to sparma my spare time."
-        natural = "My girlfriend and I love heading to the cinema every week—it's my favourite way to spend my downtime."
-        note = "Smoothing out the small verbal loop into a warm, natural conversational summary."
+        topic = "Postponing Workplace Decisions"
+        time = "38:48"
+        said = "It happens when something is not urgent or we needed to wait for a sponsor from a third person..."
+        natural = "We table discussions whenever an item isn't urgent or we are awaiting input from an external stakeholder."
+        note = "Upgrading 'sponsor from a third person' to professional corporate phrasing: 'awaiting input from an external stakeholder'."
     },
     @{
-        topic = "Overcoming the Memory Blank"
-        time = "01:01:08"
-        said = "Louis, this is so weird. I don't know if... I mean, I even feel like I'm nervous, but I'm blank."
-        natural = "It's funny, I'm drawing a complete blank right now! My mind suddenly went quiet when switching to English."
-        note = "The classic idiom 'draw a blank' is the most natural native way to describe a momentary lapse in memory under focus."
+        topic = "Praising Team Discipline"
+        time = "44:58"
+        said = "Not at all. No, there. It is. Yeah, it is a good stuff."
+        natural = "Not at all—my team is very disciplined and cohesive; it is definitely not like herding cats!"
+        note = "Smoothing the slip from 'stuff' to 'staff', connecting directly back to Louie's humorous idiom."
     }
 )
 
 # 5. Define 20 ASR FIXES
 $asrFixes = @(
-    @{ fixed = "a murder of crows"; heard = "a marr froz"; time = "45:14"; context = "Discussing eccentric British collective animal nouns." },
-    @{ fixed = "Meryl Streep"; heard = "Male stream"; time = "01:03:38"; context = "Referring to the legendary Oscar-winning actress in Sophie's Choice." },
-    @{ fixed = "Sophie's Choice"; heard = "Sophie stresses"; time = "01:03:38"; context = "Louie mentioning the 1982 psychological Holocaust drama." },
-    @{ fixed = "Doctor Doom"; heard = "a doctor Loom"; time = "01:00:26"; context = "Discussing Robert Downey Jr.'s Marvel villain in Avengers: Doomsday." },
-    @{ fixed = "Timothée Chalamet"; heard = "Smothy Salome"; time = "58:50"; context = "Talking about the lead actor of Marty Supreme and Dune." },
-    @{ fixed = "Timothée Chalamet"; heard = "Timothy... Charlemagne"; time = "52:57"; context = "Louie mentioning his sister's favourite cinema actor." },
-    @{ fixed = "padel"; heard = "paddle"; time = "47:47"; context = "Giulio describing the popular racket sport he plays in Spain." },
-    @{ fixed = "a ball of minced beef"; heard = "a tfle of beef"; time = "25:01"; context = "Giulio describing meatballs in the Heads Up game." },
-    @{ fixed = "spherical"; heard = "feric / mospher"; time = "25:40"; context = "Describing the 3D geometry of round meatballs on pasta." },
-    @{ fixed = "stracciatella"; heard = "Estra chaa"; time = "28:48"; context = "Giulio describing the Italian gelato flavour with chocolate flakes." },
-    @{ fixed = "gelato"; heard = "gelado"; time = "29:01"; context = "Authentic artisanal Italian ice cream." },
-    @{ fixed = "Seville"; heard = "Sabile"; time = "29:57"; context = "The Andalusian city where Louie's brother and mother live." },
-    @{ fixed = "My mum's ringing me"; heard = "My Loom's rigging me"; time = "52:57"; context = "Louie's mother phoning him while she was traveling in Spain." },
-    @{ fixed = "revitalize"; heard = "you vitalize"; time = "50:03"; context = "Restoring historic 700-year-old buildings in English towns." },
-    @{ fixed = "Buckinghamshire"; heard = "Buckhamshire"; time = "50:03"; context = "The historic English ceremonial county." },
-    @{ fixed = "Thanos"; heard = "Vanos"; time = "01:00:03"; context = "The previous Marvel Infinity Saga antagonist." },
-    @{ fixed = "A24"; heard = "A for a twenty 4"; time = "01:04:57"; context = "The acclaimed independent film studio behind The Zone of Interest." },
-    @{ fixed = "bottleneck"; heard = "Bo, all neg"; time = "01:06:22"; context = "The cognitive translation bottleneck restricting natural spoken fluency." },
-    @{ fixed = "suspicious"; heard = "speechy, sus"; time = "31:15"; context = "Guessing the emotion under rapid timer pressure." },
-    @{ fixed = "disconnect and relax"; heard = "the Escoonnade relax"; time = "13:57"; context = "Giulio finishing his work at the automotive office to unwind." }
+    @{ fixed = "Giulio"; heard = "Julia"; time = "00:00"; context = "The automatic note-taker transcribed Giulio as Julia throughout." },
+    @{ fixed = "We have the Alps"; heard = "We have the odds"; time = "11:58"; context = "Discussing the mountain ranges bordering Giulio's region in northern Italy." },
+    @{ fixed = "bàcaro / bàcari"; heard = "bacaro"; time = "14:26"; context = "Traditional Venetian wine and cicchetti taverns." },
+    @{ fixed = "pub crawl"; heard = "pub crew"; time = "13:48"; context = "The British tradition of touring multiple pubs in an evening." },
+    @{ fixed = "crawl... like a thief"; heard = "c... like a thie"; time = "13:37"; context = "Giulio guessing the etymology of the word crawl." },
+    @{ fixed = "house / casa"; heard = "ASA"; time = "28:16"; context = "The note-taker mishearing the Italian word for house." },
+    @{ fixed = "denied the fact"; heard = "negate the fact"; time = "28:35"; context = "False friend from Italian negare (to deny)." },
+    @{ fixed = "attempted to say"; heard = "TED to say"; time = "28:35"; context = "Speech-to-text stuttering on neighbor denial." },
+    @{ fixed = "roaming around"; heard = "journeying around"; time = "32:27"; context = "Describing outdoor domestic cats exploring gardens." },
+    @{ fixed = "Ramen"; heard = "Raman / Ram mean"; time = "06:37"; context = "Japanese noodle soup in the food tier list." },
+    @{ fixed = "B-tier for me"; heard = "beef for me"; time = "04:37"; context = "Ranking sushi into B-tier." },
+    @{ fixed = "stupid tills / cash registers"; heard = "stupid tiles"; time = "41:48"; context = "Louie's business partner's quirky financial advice." },
+    @{ fixed = "tills"; heard = "tiles"; time = "41:48"; context = "Point-of-sale registers where cash is collected." },
+    @{ fixed = "adventurous"; heard = "adventureers"; time = "51:44"; context = "Giulio laughing at Louie's Paris restaurant oven trip." },
+    @{ fixed = "good staff"; heard = "good stuff"; time = "45:06"; context = "Giulio confirming that his engineering colleagues are disciplined." },
+    @{ fixed = "in my staff"; heard = "in myself"; time = "46:10"; context = "Describing whether factory employees smoke." },
+    @{ fixed = "a bit lighthearted"; heard = "let in from children"; time = "10:04"; context = "Louie describing the vacation tier list game." },
+    @{ fixed = "doing a pub crawl"; heard = "making a tour of the pubs"; time = "13:20"; context = "Giulio describing visiting London pubs with friends." },
+    @{ fixed = "trekking in the forests"; heard = "tracks in the forests"; time = "10:56"; context = "Hiking across mountain paths in northern Italy." },
+    @{ fixed = "response from a third party"; heard = "sponsor from a third person"; time = "38:48"; context = "Waiting for external client verification before deciding." }
 )
 
 # 6. Define 4 EDITORIAL TOPICS
 $editorialTopics = @(
     @{
         id = "topic-1"
-        tag = "Active Lifestyle & Cinema Culture"
-        title = "From Valencia's Padel Courts to the Basque Red Carpet"
-        quote = "'In Spain we have the San Sebastián Film Festival in September... Brad Pitt was there, Penélope Cruz as every year.' • Giulio"
+        tag = "Alpine Sanctuary & Venetian Heritage"
+        title = "Between the Alpine Trails and the Venetian Bàcaro"
+        quote = "'We have these small wine shops called bàcaro... you walk from one to another, tasting wine and eating finger food. In the end, you don't remember when you started!' • Giulio"
         paragraphs = @(
-            "Balancing a demanding technical schedule in the automotive sector with vibrant personal passions, Giulio exemplifies the balanced Mediterranean lifestyle. Living in Valencia, his weekly routine revolves around dynamic physical movement—cycling through coastal paths, competitive padel matches, and weekend hikes through the Valencian mountains.",
-            "Beyond athletics, cinema forms an anchor for his downtime. Spain's film heritage shines brightly at the San Sebastián International Film Festival in the Basque Country, where world cinema auteurs converge each September alongside Hollywood luminaries, reflecting Giulio's discerning cinematic taste."
+            "Living in the serene countryside of northern Italy, Giulio enjoys the rare gift of geographic balance: within short reach lie both the sunlit Adriatic coastline and the soaring majesty of the Italian Alps. For his personal sanctuary, the mountains take pride of place. Weekends spent hiking through dense alpine forests, past roaring waterfalls, and resting at rustic rifugi for hearty mountain cuisine offer an essential antidote to demanding engineering deadlines.",
+            "When venturing into historic Venice, the local pace turns delightfully social. Giulio illuminated the time-honored tradition of the *bàcaro tour*—the Venetian counterpart to an English pub crawl—where friends stroll over cobblestone bridges from tavern to tavern, savoring small glasses of regional wine (*ombra*) alongside fresh, crusty *cicchetti* appetizers."
         )
     },
     @{
         id = "topic-2"
-        tag = "Heritage & Global Journeys"
-        title = "700-Year-Old English Manors to Hanoi's Indie Cinema Nights"
-        quote = "'I used to restore 700-year-old English buildings... now in Hanoi, all the municipal cinemas are free during film season.' • Louie"
+        tag = "High-Stakes Engineering"
+        title = "The Anatomy of Pharmaceutical 'Crunch Time'"
+        quote = "'On crunch time, there are 16 people around the machine praying to have it for ten minutes to test their part.' • Giulio"
         paragraphs = @(
-            "Louie's background bridges English historical conservation with global university scholarship. Prior to moving to Vietnam, he spent years in Oxfordshire and Buckinghamshire carefully revitalizing 14th-century timber-framed heritage buildings, adapting medieval architecture into thriving community businesses.",
-            "Today, studying Vietnamese at university in downtown Hanoi, he experiences Vietnam's cultural blossoming. During Hanoi's autumn festival season, cinemas across the capital open their doors free of charge, hosting intimate Q&A discussions between audiences and indie directors."
+            "High-speed pharmaceutical packaging and inspection machinery demands millimeter precision. In Giulio's manufacturing facility, optical vision recognition modules must scan, verify, and track millions of pharmaceutical items with zero error tolerance. As contractual delivery dates approach, the team enters what industry professionals call 'crunch time.'",
+            "Shifts commence before dawn at 6:00 AM, with sixteen engineers clustered around a single prototype, each negotiating for a precious ten-minute window to run diagnostics before tomorrow evening's executive review with client stakeholders."
         )
     },
     @{
         id = "topic-3"
-        tag = "Digital Detox & Sanctuary"
-        title = "The Cinema as an Unplugged Sanctuary"
-        quote = "'When I go to the cinema, I spend two or three hours without looking at my phone... it has my full attention.' • Giulio"
+        tag = "Ethics & Empathy"
+        title = "Of Traps, Roaming Cats & The Ethics of Meddling"
+        quote = "'If I had time travel, I would leave ten minutes before work to find my cat and bring her safely home.' • Giulio"
         paragraphs = @(
-            "In a digital era dominated by endless notification pings and fragmented attention spans, Giulio offered a perceptive insight into the sacred role of the movie theatre. Streaming a movie at home often devolves into checking Instagram or replying to messages mid-scene.",
-            "The darkened cinema auditorium provides an essential sensory sanctuary. Surrounded by the warmth of freshly popped corn, gentle ascending stair lighting, and collective silence, the viewer surrenders completely to the art of cinematic storytelling, regaining the rare gift of undivided focus."
+            "In an unexpectedly poignant turn of conversation, a lighthearted discussion about superhero powers evolved into a heartfelt reflection on loss and neighborly ethics. One month ago, Giulio lost his beloved cat. Soon afterward, neighbors across the street were discovered harboring an unauthorized one-meter locking wire trap—ostensibly for mice, yet clearly proportioned for domestic animals.",
+            "Giulio spoke with moving dignity, citing Italian civic protections that prohibit private trapping of domestic pets. When asked which single moment in history he would alter if gifted with time travel, he chose neither wealth nor fame, but simply a ten-minute temporal adjustment to rescue his pet before she vanished into the morning mist."
         )
     },
     @{
         id = "topic-4"
-        tag = "Linguistic Quirks & Idioms"
-        title = "The English Menagerie: Crows, Geese & The Gander"
-        quote = "'A murder of crows, a gaggle of geese... what is good for the goose is good for the gander.' • Louie & Giulio"
+        tag = "Workplace Diplomacy"
+        title = "The British Art of Meeting Diplomacy: From 'Herding Cats' to 'Waiting Till Monday'"
+        quote = "'To table the discussion... why don't we wait till Monday? It gives everyone the weekend to cool down.' • Louie"
         paragraphs = @(
-            "The English language harbors a centuries-old fascination with poetic collective animal nouns. A gathering of lions becomes an honorable 'pride', a noisy flock of geese forms a 'gaggle', and black crows famously assemble into a chilling 'murder'—a phrase the speech-to-text note-taker hilariously transcribed as 'a marr froz'!",
-            "Paired with these animal metaphors is the timeless British proverb: 'What is good for the goose is good for the gander.' Born from 17th-century folklore, it remains one of the most vivid ways to insist upon fairness, equity, and consistency across all human endeavors."
+            "Louie shared colorful workplace wisdom drawn from years in British commercial restoration and hospitality. When passionate architects reach a fierce architectural impasse, the most diplomatic solution is often to 'table the discussion'—or, as Louie gracefully phrases it, 'Why don't we wait till Monday?' A weekend break lets tempers cool and reveals obvious structural solutions.",
+            "Equally memorable is the English idiom 'like herding cats'—the futile attempt to impose rigid order on intensely independent individuals. From Louie's partner's cigarette breaks to a mad dash across the English Channel to Paris 24 hours before opening to retrieve a commercial oven, humor and patience remain the greatest leadership assets."
         )
     }
 )
 
 # 7. Define 8 FLASHCARD KEYS
-$flashcardKeys = @("serendipity", "contingency", "affectionate", "apologetic", "thief-of-joy", "inner-monologue", "bottleneck", "back-catalog")
+$flashcardKeys = @("crunch-time", "hit-or-miss", "bacaro", "fly-on-the-wall", "meddle", "table-the-discussion", "shed-light", "herding-cats")
 
 # 8. Define 6 QUIZ QUESTIONS (The Test)
 $quizQuestions = @(
     @{
         id = 1
-        question = "In English idioms and moral proverbs, what does the expression 'what is good for the goose is good for the gander' (45:18) convey?"
+        question = "What does the corporate and engineering phrase 'crunch time' (01:08) describe in Giulio's workplace?"
         options = @(
-            "People in rural communities should follow local agricultural customs."
-            "Rules, standards, and privileges that apply to one party must apply equally and fairly to everyone else."
-            "Major personal decisions should always be made unanimously by the family."
-            "You should always share all personal possessions with your neighbors."
+            "A daily morning stretching session before operating factory equipment."
+            "A high-intensity period before a critical project deadline where teams work extended shifts to complete and test a machine."
+            "The scheduled lunch hour when engineers eat crunchy snacks."
+            "A mandatory company training seminar on safety regulations."
         )
         correctIndex = 1
-        explanation = "'What's good for the goose is good for the gander' (45:18) asserts that whatever rule, privilege, or standard applies to one person must apply equally and fairly to the other."
+        explanation = "'Crunch time' (01:08) refers to the critical, high-pressure final stretch before a major project delivery where teams pull long hours to achieve their milestones."
     },
     @{
         id = 2
-        question = "Why did Louie explain that describing someone as 'very apologetic' (33:31) is viewed as a courteous and positive trait in British English?"
+        question = "When Louie describes an experience or food (such as crispy tacos) as being 'hit or miss' (09:25), what does the idiom mean?"
         options = @(
-            "It proves they feel overwhelming guilt and lack confidence in their professional work."
-            "It shows they are hesitant to express their opinions openly in conversation."
-            "It reflects polite emotional maturity—readily acknowledging a small slip courteously without drama or neediness."
-            "It indicates they prefer to work independently without collaborating in a team."
+            "It is strictly forbidden by health authorities."
+            "It is highly unpredictable in quality—sometimes excellent, but other times disappointing depending on who makes it."
+            "It must always be served at room temperature."
+            "It is an acquired taste popular only among children."
         )
-        correctIndex = 2
-        explanation = "Louie explained that being 'apologetic' (33:31) reflects considerate social intelligence—saying sorry gracefully when you make a slip, without being pathetic or needy."
+        correctIndex = 1
+        explanation = "'Hit or miss' (09:25) describes something inconsistent that can either be a great success or a failure depending on circumstances or preparation."
     },
     @{
         id = 3
-        question = "What timeless philosophical lesson is captured by the proverb 'Envy is the thief of joy' (37:21)?"
+        question = "What is a traditional Venetian 'bàcaro tour' (14:26), which Giulio compared to an English 'pub crawl'?"
         options = @(
-            "Spending too much money on luxury items creates long-term financial anxiety."
-            "Constantly comparing yourself resentfully to what friends or neighbors have only steals your own contentment."
-            "You should keep your career ambitions confidential from colleagues."
-            "Taking holidays too frequently disrupts your daily office routine."
+            "A guided gondola race through the Grand Canal."
+            "Walking between small, rustic Venetian wine bars to enjoy glasses of wine paired with bite-sized cicchetti finger food."
+            "A formal seated five-course banquet in a historic palace."
+            "A bicycle marathon navigating the bridges of Venice."
         )
         correctIndex = 1
-        explanation = "'Envy is the thief of joy' (37:21) warns that looking at what others possess and measuring your worth against them destroys your genuine peace of mind."
+        explanation = "A bàcaro (14:26) is an authentic Venetian wine bar where locals socialize over local wine and traditional cicchetti (small savory appetizers)."
     },
     @{
         id = 4
-        question = "When discussing building conversational fluency, what specific obstacle does the 'bottleneck' metaphor (01:06:22) represent?"
+        question = "In professional English meetings, what does the idiom 'to table the discussion' (35:28) mean?"
         options = @(
-            "Running out of physical breath when speaking in long paragraphs."
-            "The cognitive friction of mentally translating Spanish into English in your head before speaking."
-            "Forgetting technical automotive terminology during a presentation."
-            "Struggling to comprehend rapid British regional accents."
+            "To place all physical documents on top of the conference table for immediate signing."
+            "To postpone a topic or decision until a future date or meeting so tempers can cool and more information can be gathered."
+            "To terminate the project immediately and cancel future meetings."
+            "To invite junior employees to vote on executive strategy."
         )
         correctIndex = 1
-        explanation = "The 'bottleneck' (01:06:22) is the cognitive choke-point of translating thoughts word-for-word from Spanish to English rather than speaking directly and intuitively."
+        explanation = "'To table the discussion' (35:28) means to put an unresolved issue on hold and revisit it later—often phrased casually as 'Why don't we wait till Monday?'"
     },
     @{
         id = 5
-        question = "Why did Giulio emphasize that going to the cinema once a week provides an essential mental sanctuary compared to watching films at home (57:13)?"
+        question = "What humorous dilemma does the British idiom 'like herding cats' (44:11) vividly illustrate?"
         options = @(
-            "Cinema audio systems are louder than home soundbars."
-            "It allows him to unplug completely from his smartphone for two to three hours without digital notifications."
-            "Movie tickets in Valencia are subsidized on weekday evenings."
-            "He only enjoys high-budget science-fiction franchises on IMAX screens."
+            "Training domestic pets to perform complicated agility tricks."
+            "Trying to organize, coordinate, or control a chaotic, independent group of people who all want to do different things."
+            "Working in veterinary medicine during emergency calls."
+            "Cleaning up spilled milk in a busy commercial restaurant kitchen."
         )
         correctIndex = 1
-        explanation = "Giulio highlighted that at home he constantly checks notifications and Instagram, whereas the movie theatre commands his undivided attention and allows him to unplug."
+        explanation = "'Herding cats' (44:11) is a classic British idiom for an impossibly frustrating task: attempting to corral independent individuals into a unified direction."
     },
     @{
         id = 6
-        question = "What is the eccentric British collective noun for a flock of crows, which the note-taker humorously transcribed as 'a marr froz' (45:14)?"
+        question = "When Giulio wished he had the superpower of 'time travel' (24:36) to change an event from one month ago, what personal situation was he hoping to fix?"
         options = @(
-            "A gaggle of crows"
-            "A pride of crows"
-            "A parliament of crows"
-            "A murder of crows"
+            "Arriving 10 minutes earlier before work to locate his lost cat and investigate a neighbor's suspicious trapping cage."
+            "Preventing an electrical microchip failure on a brand new oven imported from Paris."
+            "Canceling a rainy holiday weekend to the Alps."
+            "Buying a vintage bicycle before it was sold out in Rome."
         )
-        correctIndex = 3
-        explanation = "A group of crows is famously termed 'a murder of crows' (45:14)—one of the most curious and celebrated collective animal nouns in the English language!"
+        correctIndex = 0
+        explanation = "Giulio shared the touching story of his lost cat (24:36), wishing he could travel back just 10 minutes to rescue her before she vanished."
     }
 )
 
@@ -990,18 +990,18 @@ $quizQuestions = @(
 $reflectionPrompts = @(
     @{
         num = "01"
-        title = "The Zone of Interest & Sonic Tension"
-        text = "As you watch Jonathan Glazer's masterpiece before Thursday, pay close attention to the sound design beyond the garden wall. How does the chilling contrast between everyday domestic family life and the distant ambient soundtrack create dramatic tension?"
+        title = "Navigating the Testing Phase Meeting"
+        text = "As you enter tomorrow evening's project manager review regarding client testing, how can you deploy diplomatic phrases like 'shed light on' or 'table the discussion' to manage stakeholder expectations gracefully?"
     },
     @{
         num = "02"
-        title = "Opening the Translation Bottleneck"
-        text = "This week at your desk in Valencia, observe those micro-moments when you hesitate before writing an email or speaking in English. What happens if you skip constructing the Spanish sentence first and speak the core concept directly?"
+        title = "The Alpine Sanctuary Escape"
+        text = "When your current 16-person engineering crunch time concludes, what specific alpine trail or mountain rifugio near the Alps will you head to in order to disconnect, unwind, and recharge?"
     },
     @{
         num = "03"
-        title = "Hidden Gems from the Back Catalog"
-        text = "Consider your personal cinematic 'back catalog'. What is one under-appreciated film or slow-burner that left an indelible impression on you, and how would you describe its atmosphere to a friend?"
+        title = "The Art of Herding Cats"
+        text = "Reflect on a past moment in your engineering career when coordinating colleagues felt 'like herding cats'. What communication adjustments helped bring everyone into alignment?"
     }
 )
 
@@ -1009,29 +1009,24 @@ $reflectionPrompts = @(
 Write-Host "Processing transcript turns with ASR fix badges and vocabulary marks..."
 
 $asrMap = @{
-    "a marr froz" = @{ fix = "a murder of crows"; raw = "a marr froz" }
-    "Male stream" = @{ fix = "Meryl Streep"; raw = "Male stream" }
-    "Sophie stresses" = @{ fix = "Sophie's Choice"; raw = "Sophie stresses" }
-    "a doctor Loom" = @{ fix = "Doctor Doom"; raw = "a doctor Loom" }
-    "Doctor Loom" = @{ fix = "Doctor Doom"; raw = "Doctor Loom" }
-    "Smothy Salome" = @{ fix = "Timothée Chalamet"; raw = "Smothy Salome" }
-    "Timothy... Charlemagne" = @{ fix = "Timothée Chalamet"; raw = "Timothy... Charlemagne" }
-    "paddle" = @{ fix = "padel"; raw = "paddle" }
-    "a tfle of beef" = @{ fix = "a ball of minced beef"; raw = "a tfle of beef" }
-    "feric" = @{ fix = "spherical"; raw = "feric" }
-    "mospher" = @{ fix = "spherical"; raw = "mospher" }
-    "Estra chaa" = @{ fix = "stracciatella"; raw = "Estra chaa" }
-    "gelado" = @{ fix = "gelato"; raw = "gelado" }
-    "Sabile" = @{ fix = "Seville"; raw = "Sabile" }
-    "My Loom's rigging me" = @{ fix = "My mum's ringing me"; raw = "My Loom's rigging me" }
-    "you vitalize" = @{ fix = "revitalize"; raw = "you vitalize" }
-    "Buckhamshire" = @{ fix = "Buckinghamshire"; raw = "Buckhamshire" }
-    "Vanos" = @{ fix = "Thanos"; raw = "Vanos" }
-    "A for a twenty 4" = @{ fix = "A24"; raw = "A for a twenty 4" }
-    "Bo, all neg" = @{ fix = "bottleneck"; raw = "Bo, all neg" }
-    "speechy, sus" = @{ fix = "suspicious"; raw = "speechy, sus" }
-    "in actuated" = @{ fix = "infatuated"; raw = "in actuated" }
-    "the Escoonnade relax" = @{ fix = "disconnect and relax"; raw = "the Escoonnade relax" }
+    "We have the odds" = @{ fix = "We have the Alps"; raw = "We have the odds" }
+    "pub crew" = @{ fix = "pub crawl"; raw = "pub crew" }
+    "c... like a thie" = @{ fix = "crawl... like a thief"; raw = "c... like a thie" }
+    "ASA" = @{ fix = "house / casa"; raw = "ASA" }
+    "negate the fact" = @{ fix = "denied the fact"; raw = "negate the fact" }
+    "TED to say" = @{ fix = "attempted to say"; raw = "TED to say" }
+    "journeying around" = @{ fix = "roaming around"; raw = "journeying around" }
+    "Ram mean" = @{ fix = "Ramen"; raw = "Ram mean" }
+    "Raman" = @{ fix = "Ramen"; raw = "Raman" }
+    "beef for me" = @{ fix = "B-tier for me"; raw = "beef for me" }
+    "stupid tiles" = @{ fix = "stupid tills / cash registers"; raw = "stupid tiles" }
+    "tiles" = @{ fix = "tills"; raw = "tiles" }
+    "adventureers" = @{ fix = "adventurous"; raw = "adventureers" }
+    "good stuff" = @{ fix = "good staff"; raw = "good stuff" }
+    "in myself" = @{ fix = "in my staff"; raw = "in myself" }
+    "let in from children" = @{ fix = "a bit lighthearted"; raw = "let in from children" }
+    "tracks in the forests" = @{ fix = "treks in the forests"; raw = "tracks in the forests" }
+    "sponsor from a third person" = @{ fix = "response from a third party"; raw = "sponsor from a third person" }
 }
 
 $processedTurns = @()
@@ -1040,9 +1035,12 @@ for ($i = 0; $i -lt $turns.Count; $i++) {
     $turnId = "turn-$i"
     
     # Speaker normalization
-    $speaker = "Note-Taker / Audio"
-    if ($t.speaker -match "Lewis|Louie") { $speaker = "Louie" }
-    elseif ($t.speaker -match "Tony|Giulio") { $speaker = "Giulio" }
+    $speaker = "Louie"
+    if ($t.speaker -match "Julia|Giulio") { 
+        $speaker = "Giulio" 
+    } elseif ($t.speaker -match "Lewis|Louie") {
+        $speaker = "Louie"
+    }
 
     $html = $t.text
 
@@ -1055,30 +1053,27 @@ for ($i = 0; $i -lt $turns.Count; $i++) {
         }
     }
 
-    # Chapter assignment
+    # Chapter assignment based on lesson progression
     $chapterId = $null
     $chapterTitle = $null
     if ($i -eq 0) {
-        $chapterId = "chap-0"
-        $chapterTitle = "Prologue • Audio Setup & Waiting Room (00:00 – 13:42)"
-    } elseif ($i -eq 8) {
         $chapterId = "chap-1"
-        $chapterTitle = "Chapter I • Lesson Architecture, Real-Time Notes & Mental Translation (13:43 – 20:25)"
-    } elseif ($i -eq 49) {
+        $chapterTitle = "Chapter I • Early Shifts, Deadlines & The Engineering 'Crunch Time' (00:00 – 02:30)"
+    } elseif ($i -eq 13) {
         $chapterId = "chap-2"
-        $chapterTitle = "Chapter II • 'Heads Up' Warm-Up: Culinary Collocations & Bagel Geometry (20:26 – 30:32)"
-    } elseif ($i -eq 134) {
+        $chapterTitle = "Chapter II • The Great Food Tier List: Pizza, Ramen & Exploding Tacos (02:31 – 09:50)"
+    } elseif ($i -eq 52) {
         $chapterId = "chap-3"
-        $chapterTitle = "Chapter III • Emotional Nuance: Suspicion, Affection & The Thief of Joy (30:33 – 39:30)"
-    } elseif ($i -eq 189) {
+        $chapterTitle = "Chapter III • Alpine Trails, Venetian Bàcari & London Pub Crawls (09:51 – 19:40)"
+    } elseif ($i -eq 94) {
         $chapterId = "chap-4"
-        $chapterTitle = "Chapter IV • Abstract Concepts, Moral Philosophy & The English Menagerie (39:31 – 47:46)"
-    } elseif ($i -eq 249) {
+        $chapterTitle = "Chapter IV • Superpowers, Time Travel & The Mystery of the Missing Cat (19:41 – 34:30)"
+    } elseif ($i -eq 150) {
         $chapterId = "chap-5"
-        $chapterTitle = "Chapter V • Active Passions, Cinema Atmosphere & Vietnamese Film Festivals (47:47 – 58:20)"
-    } elseif ($i -eq 303) {
+        $chapterTitle = "Chapter V • Business Diplomacy: Tabling Talks & Shedding Light on Complex Systems (34:31 – 43:50)"
+    } elseif ($i -eq 174) {
         $chapterId = "chap-6"
-        $chapterTitle = "Chapter VI • Blockbuster Sagas, Historical Trauma & Overcoming the Bottleneck (58:21 – 01:07:05)"
+        $chapterTitle = "Chapter VI • 'Herding Cats', Smoke Break Rules & The 24-Hour Paris Oven Dash (43:51 – 52:56)"
     }
 
     $processedTurns += [PSCustomObject]@{
@@ -1100,12 +1095,10 @@ foreach ($vkey in $vocabDb.Keys) {
     if ($tIdx -ge 0 -and $tIdx -lt $processedTurns.Count) {
         $targetTurn = $processedTurns[$tIdx]
         $w = $vItem.word
-        # Replace occurrences in turn HTML if not already inside a tag
         $mark = "<span class=`"vocab-mark`" data-vkey=`"$vkey`" onclick=`"inspectVocab('$vkey')`">$w</span>"
         if ($targetTurn.html -match [regex]::Escape($w)) {
             $targetTurn.html = [regex]::Replace($targetTurn.html, "\b" + [regex]::Escape($w) + "\b", $mark, [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
         } else {
-            # Append badge to turn if word was implied
             $targetTurn.html += " $mark"
         }
     }
@@ -1369,10 +1362,10 @@ $headPart = @'
       <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/20 text-white font-mono text-[11px] font-bold">
         ✨ Lesson 01
       </span>
-      <span class="font-medium">Giulio M. • Spoken Fluency, Emotional Nuance &amp; Cinema Sanctuary</span>
+      <span class="font-medium">Giulio M. • Pharmaceutical Engineering, Alpine Sanctuaries &amp; Business Idioms</span>
     </div>
     <div class="flex items-center gap-2">
-      <span class="text-white/80 text-[11px]">Valencia, Spain ↔ Hanoi, Vietnam</span>
+      <span class="text-white/80 text-[11px]">Veneto, Italy ↔ Hanoi, Vietnam</span>
       <a href="#how-it-works" class="underline font-semibold hover:text-parchment-100 transition text-[11px] ml-1">How It Works ↓</a>
     </div>
   </aside>
@@ -1451,15 +1444,15 @@ $headPart = @'
         <div class="lg:col-span-8 space-y-3.5">
           <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1 rounded-full bg-sage-100/90 border border-sage-200 text-sage-800 text-xs font-medium">
             <i data-lucide="compass" class="w-3.5 h-3.5 text-autumn-600"></i>
-            <span>Lesson 01 • 03 November 2026 • 1-Hour Spoken Session</span>
+            <span>Lesson 01 • 03 November 2026 • 53-Minute Spoken Session</span>
           </div>
 
           <h1 class="font-serif text-3xl sm:text-4xl lg:text-[2.65rem] font-bold text-slatewarm-900 leading-[1.16]">
-            Unlocking Spoken Fluency: From <span class="text-autumn-700 italic font-semibold">Heads Up</span> to the Cinema Sanctuary
+            From Pharmaceutical <span class="text-autumn-700 italic font-semibold">Crunch Time</span> to Venetian Bàcari &amp; Alpine Treks
           </h1>
 
           <p class="text-stone-600 text-sm sm:text-base leading-relaxed max-w-3xl">
-            In our first session, Giulio and Louie addressed the core challenge of <strong>mental translation</strong>—opening the cognitive "bottleneck" where thoughts are formulated in Spanish before being translated to English. Through fast-paced <em>Heads Up</em> rounds, emotional nuances (<em>apologetic</em> vs <em>pathetic</em>), English collective nouns (<em>a murder of crows</em>), and deep conversations on the cinema as an unplugged refuge, we built the foundation for effortless spoken fluency.
+            In today's lesson, Giulio and Louie navigated a rich variety of conversational and technical frontiers: handling high-stakes <strong>crunch time</strong> shifts in pharmaceutical machinery, ranking food tiers from artisan burgers to exploding tacos, hiking through alpine waterfalls, the charming social ritual of Venetian <em>bàcaro</em> wine tours, a heartfelt discussion on missing cats and neighborhood ethics, and mastering high-level business idioms—from <strong>"tabling the discussion"</strong> to <strong>"herding cats"</strong>.
           </p>
 
           <!-- 4 Pillars for the Student -->
@@ -1467,13 +1460,13 @@ $headPart = @'
             <div class="flex items-start gap-2 bg-parchment-100/80 p-2.5 rounded-xl border border-parchment-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-sage-600 shrink-0 mt-0.5"></i>
               <div>
-                <strong class="text-slatewarm-900">Zero Note-Taking Friction:</strong> Every turn is captured and organized into 6 chronological chapters with per-turn audio.
+                <strong class="text-slatewarm-900">Zero Note-Taking Friction:</strong> Every turn is captured and arranged into 6 chronological chapters with per-turn audio.
               </div>
             </div>
             <div class="flex items-start gap-2 bg-parchment-100/80 p-2.5 rounded-xl border border-parchment-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-sage-600 shrink-0 mt-0.5"></i>
               <div>
-                <strong class="text-slatewarm-900">60 Flagged Lexicon Terms:</strong> Hover or click any word for IPA, CEFR level, Spanish translations, and British audio.
+                <strong class="text-slatewarm-900">60 Flagged Lexicon Terms:</strong> Hover or click any word for IPA, CEFR level, Italian translations, and British audio.
               </div>
             </div>
             <div class="flex items-start gap-2 bg-parchment-100/80 p-2.5 rounded-xl border border-parchment-300">
@@ -1485,7 +1478,7 @@ $headPart = @'
             <div class="flex items-start gap-2 bg-parchment-100/80 p-2.5 rounded-xl border border-parchment-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-sage-600 shrink-0 mt-0.5"></i>
               <div>
-                <strong class="text-slatewarm-900">Note-Taker Errors Fixed:</strong> Funny automated mishearings (<em>a marr froz</em>, <em>Male stream</em>, <em>Doctor Loom</em>) cleanly corrected.
+                <strong class="text-slatewarm-900">Note-Taker Errors Fixed:</strong> Funny automated mishearings (<em>We have the odds</em>, <em>stupid tiles</em>, <em>pub crew</em>) cleanly corrected.
               </div>
             </div>
           </div>
@@ -1499,7 +1492,7 @@ $headPart = @'
               <i data-lucide="scroll-text" class="w-4 h-4 group-hover:scale-110 transition"></i>
             </div>
             <div class="font-serif font-bold text-slatewarm-900 text-lg mt-0.5">Full Transcript</div>
-            <p class="text-[11px] text-stone-600 mt-0.5">6 chapters • 00:00 to 01:07:05</p>
+            <p class="text-[11px] text-stone-600 mt-0.5">6 chapters • 00:00 to 52:56</p>
           </div>
 
           <div onclick="switchTab('vocab')" class="cursor-pointer p-4 rounded-2xl bg-sage-50/95 border border-sage-200 hover:border-sage-400 transition shadow-sm group">
@@ -1508,7 +1501,7 @@ $headPart = @'
               <i data-lucide="book-marked" class="w-4 h-4 group-hover:scale-110 transition"></i>
             </div>
             <div class="font-serif font-bold text-slatewarm-900 text-lg mt-0.5">Flagged Lexicon</div>
-            <p class="text-[11px] text-stone-600 mt-0.5">60 B2–C2 terms with Spanish translations</p>
+            <p class="text-[11px] text-stone-600 mt-0.5">60 B2–C2 terms with Italian translations</p>
           </div>
 
           <div onclick="switchTab('fixes')" class="cursor-pointer p-4 rounded-2xl bg-autumn-50/95 border border-autumn-200 hover:border-autumn-400 transition shadow-sm group">
@@ -1554,7 +1547,7 @@ $headPart = @'
 
         <button onclick="switchTab('places')" id="tab-btn-places" class="tab-btn flex-1 sm:flex-initial px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 text-stone-700 hover:bg-parchment-100">
           <i data-lucide="landmark" class="w-4 h-4 text-autumn-600"></i>
-          <span>4. Cultural Topics &amp; Cinema</span>
+          <span>4. Cultural Topics &amp; Dialogue</span>
         </button>
 
         <button onclick="switchTab('practice')" id="tab-btn-practice" class="tab-btn flex-1 sm:flex-initial px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 text-stone-700 hover:bg-parchment-100">
@@ -1606,13 +1599,12 @@ $headPart = @'
             <!-- Chapter jump -->
             <select id="chapter-select" onchange="scrollToChapter(this.value)" class="text-xs bg-parchment-50 border border-parchment-200 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none">
               <option value="">Jump to Chapter...</option>
-              <option value="chap-0">Prologue: Audio Setup (00:00)</option>
-              <option value="chap-1">Chapter I: Lesson Architecture (13:43)</option>
-              <option value="chap-2">Chapter II: Heads Up &amp; Food (20:26)</option>
-              <option value="chap-3">Chapter III: Emotional Nuance (30:33)</option>
-              <option value="chap-4">Chapter IV: Abstract Concepts (39:31)</option>
-              <option value="chap-5">Chapter V: Cinema Atmosphere (47:47)</option>
-              <option value="chap-6">Chapter VI: Blockbusters &amp; Bottlenecks (58:21)</option>
+              <option value="chap-1">Chapter I: Early Shifts &amp; Crunch Time (00:00)</option>
+              <option value="chap-2">Chapter II: The Food Tier List (02:31)</option>
+              <option value="chap-3">Chapter III: Alpine Trails &amp; Venetian Bàcari (09:51)</option>
+              <option value="chap-4">Chapter IV: Superpowers &amp; Missing Cat (19:41)</option>
+              <option value="chap-5">Chapter V: Business Diplomacy (34:31)</option>
+              <option value="chap-6">Chapter VI: Herding Cats &amp; The Paris Dash (43:51)</option>
             </select>
 
             <!-- Toggle Highlights -->
@@ -1643,16 +1635,16 @@ $headPart = @'
               <span class="text-[11px] font-mono uppercase tracking-wider text-autumn-700 font-bold flex items-center gap-1">
                 <i data-lucide="sparkle" class="w-3.5 h-3.5"></i> Vocabulary Spotlight
               </span>
-              <span id="insp-time" class="text-xs font-mono px-2 py-0.5 rounded bg-sage-100 text-sage-800">🕒 14:24</span>
+              <span id="insp-time" class="text-xs font-mono px-2 py-0.5 rounded bg-sage-100 text-sage-800">🕒 01:08</span>
             </div>
 
             <div class="space-y-1.5">
               <div class="flex items-center justify-between gap-2">
-                <h3 id="insp-word" class="font-serif text-2xl font-bold text-slatewarm-900">fluency</h3>
-                <span id="insp-level" class="px-2 py-0.5 rounded-md bg-autumn-100 text-autumn-800 font-mono text-xs font-bold">B2</span>
+                <h3 id="insp-word" class="font-serif text-2xl font-bold text-slatewarm-900">crunch time</h3>
+                <span id="insp-level" class="px-2 py-0.5 rounded-md bg-autumn-100 text-autumn-800 font-mono text-xs font-bold">C1</span>
               </div>
               <div class="flex items-center gap-2 text-xs font-mono text-stone-500">
-                <span id="insp-ipa">/ˈfluː.ən.si/</span>
+                <span id="insp-ipa">/krʌntʃ taɪm/</span>
                 <span>•</span>
                 <span id="insp-pos">noun</span>
               </div>
@@ -1661,24 +1653,24 @@ $headPart = @'
             <div class="space-y-2 pt-1">
               <span class="text-[11px] font-mono uppercase tracking-wider text-stone-400">Meaning</span>
               <p id="insp-def" class="text-xs sm:text-sm text-stone-700 leading-relaxed bg-parchment-50 p-3 rounded-xl border border-parchment-200">
-                The natural ability to speak smoothly, easily, and without awkward hesitation or cognitive strain.
+                A critical period of intense work and long hours immediately preceding an urgent project deadline.
               </p>
             </div>
 
             <div class="space-y-2">
               <span class="text-[11px] font-mono uppercase tracking-wider text-stone-400">Spoken in Lesson</span>
               <p id="insp-quote" class="text-xs italic text-sage-900 bg-sage-50/70 p-3 rounded-xl border border-sage-200 leading-relaxed">
-                Giulio (14:24): "...we are here today because I would like to improve my fluency while speaking..."
+                Louie (01:08): "So you had crunch time... where you have a deadline coming and everyone is working crazy hours to get it done."
               </p>
             </div>
 
             <div class="space-y-1.5 border-t border-parchment-200 pt-3">
-              <span class="text-[11px] font-mono uppercase tracking-wider text-stone-400">Spanish Equivalent</span>
-              <p id="insp-es" class="text-sm font-serif font-bold text-autumn-800">fluidez verbal</p>
+              <span class="text-[11px] font-mono uppercase tracking-wider text-stone-400">Italian Equivalent</span>
+              <p id="insp-es" class="text-sm font-serif font-bold text-autumn-800">fase di massimo impegno / periodo critico</p>
             </div>
 
             <div class="pt-2 flex items-center gap-2">
-              <button id="insp-audio-btn" onclick="speakWord('fluency')" class="flex-1 py-2 px-3 rounded-xl bg-sage-700 hover:bg-sage-800 text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-sm transition">
+              <button id="insp-audio-btn" onclick="speakWord('crunch time')" class="flex-1 py-2 px-3 rounded-xl bg-sage-700 hover:bg-sage-800 text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-sm transition">
                 <i data-lucide="volume-2" class="w-4 h-4"></i>
                 <span>Listen (UK Pronunciation)</span>
               </button>
@@ -1704,14 +1696,14 @@ $headPart = @'
               <i data-lucide="book-marked" class="w-5 h-5 text-autumn-600"></i>
               <h2 class="font-serif text-2xl font-bold text-slatewarm-900">Vocabulary Sanctuary Dictionary</h2>
             </div>
-            <p class="text-xs text-stone-500 mt-0.5">Explore 60 curated B2–C2 words, idioms, and collocations with exact timestamps, Spanish equivalents, and British audio</p>
+            <p class="text-xs text-stone-500 mt-0.5">Explore 60 curated B2–C2 words, idioms, and collocations with exact timestamps, Italian equivalents, and British audio</p>
           </div>
 
           <div class="flex flex-wrap items-center gap-2.5">
             <!-- Search -->
             <div class="relative min-w-[220px]">
               <i data-lucide="search" class="w-3.5 h-3.5 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
-              <input id="vocab-search" oninput="renderVocabGrid()" type="text" placeholder="Search dictionary or Spanish..." class="w-full pl-8 pr-3 py-1.5 rounded-xl bg-parchment-50 border border-parchment-200 text-xs text-slatewarm-900 focus:outline-none focus:border-autumn-500" />
+              <input id="vocab-search" oninput="renderVocabGrid()" type="text" placeholder="Search dictionary or Italian..." class="w-full pl-8 pr-3 py-1.5 rounded-xl bg-parchment-50 border border-parchment-200 text-xs text-slatewarm-900 focus:outline-none focus:border-autumn-500" />
             </div>
 
             <!-- Level filter -->
@@ -1728,12 +1720,11 @@ $headPart = @'
         <div class="flex flex-wrap items-center gap-1.5 text-xs pt-1">
           <span class="text-[11px] font-mono uppercase tracking-wider text-stone-400 mr-1">Categories:</span>
           <button onclick="setVocabCategory('all')" id="cat-btn-all" class="cat-pill px-3 py-1 rounded-xl bg-sage-700 text-white font-semibold transition">All (60)</button>
-          <button onclick="setVocabCategory('emotion')" id="cat-btn-emotion" class="cat-pill px-3 py-1 rounded-xl bg-parchment-100 hover:bg-parchment-200 text-stone-700 transition">Emotions (10)</button>
-          <button onclick="setVocabCategory('cinema')" id="cat-btn-cinema" class="cat-pill px-3 py-1 rounded-xl bg-parchment-100 hover:bg-parchment-200 text-stone-700 transition">Cinema &amp; Film (9)</button>
-          <button onclick="setVocabCategory('philosophy')" id="cat-btn-philosophy" class="cat-pill px-3 py-1 rounded-xl bg-parchment-100 hover:bg-parchment-200 text-stone-700 transition">Philosophy &amp; Morals (10)</button>
-          <button onclick="setVocabCategory('language')" id="cat-btn-language" class="cat-pill px-3 py-1 rounded-xl bg-parchment-100 hover:bg-parchment-200 text-stone-700 transition">Fluency &amp; Idioms (9)</button>
-          <button onclick="setVocabCategory('culture')" id="cat-btn-culture" class="cat-pill px-3 py-1 rounded-xl bg-parchment-100 hover:bg-parchment-200 text-stone-700 transition">Culture &amp; Sport (7)</button>
-          <button onclick="setVocabCategory('culinary')" id="cat-btn-culinary" class="cat-pill px-3 py-1 rounded-xl bg-parchment-100 hover:bg-parchment-200 text-stone-700 transition">Food &amp; Gelato (6)</button>
+          <button onclick="setVocabCategory('culture')" id="cat-btn-culture" class="cat-pill px-3 py-1 rounded-xl bg-parchment-100 hover:bg-parchment-200 text-stone-700 transition">Workplace &amp; Culture (24)</button>
+          <button onclick="setVocabCategory('language')" id="cat-btn-language" class="cat-pill px-3 py-1 rounded-xl bg-parchment-100 hover:bg-parchment-200 text-stone-700 transition">Idioms &amp; Speech (14)</button>
+          <button onclick="setVocabCategory('culinary')" id="cat-btn-culinary" class="cat-pill px-3 py-1 rounded-xl bg-parchment-100 hover:bg-parchment-200 text-stone-700 transition">Food &amp; Dining (8)</button>
+          <button onclick="setVocabCategory('philosophy')" id="cat-btn-philosophy" class="cat-pill px-3 py-1 rounded-xl bg-parchment-100 hover:bg-parchment-200 text-stone-700 transition">Philosophy &amp; Powers (8)</button>
+          <button onclick="setVocabCategory('emotion')" id="cat-btn-emotion" class="cat-pill px-3 py-1 rounded-xl bg-parchment-100 hover:bg-parchment-200 text-stone-700 transition">Emotions &amp; Focus (6)</button>
         </div>
 
         <!-- Dictionary Cards Grid -->
@@ -1756,7 +1747,7 @@ $headPart = @'
           <h2 class="font-serif text-2xl font-bold text-slatewarm-900">Your Spoken Strengths Celebrated</h2>
         </div>
         <p class="text-xs text-stone-600">
-          Before reviewing grammar or notes, we celebrate these 6 moments where Giulio expressed complex ideas, nuanced emotions, and rich sensory descriptions with natural English flair!
+          Before reviewing grammar or notes, we celebrate these 6 moments where Giulio expressed technical engineering deadlines, cultural traditions, and animal ethics with natural English flair!
         </p>
 
         <div id="natural-strengths-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
@@ -1786,7 +1777,7 @@ $headPart = @'
             <i data-lucide="file-check-2" class="w-5 h-5 text-autumn-600"></i>
             <div>
               <h2 class="font-serif text-2xl font-bold text-slatewarm-900">Speech-to-Text Corrections Log</h2>
-              <p class="text-xs text-stone-500 mt-0.5">Automated transcription tools mishear names, collective nouns, and places. Here is the forensic record of all 20 sorted fixes!</p>
+              <p class="text-xs text-stone-500 mt-0.5">Automated transcription tools mishear proper nouns, place names, and homophones. Here is the forensic record of all 20 sorted fixes!</p>
             </div>
           </div>
           <span class="px-3 py-1 rounded-full bg-sage-100 text-sage-800 font-mono text-xs font-semibold">20 Cleaned Fixes</span>
@@ -1812,7 +1803,7 @@ $headPart = @'
     </section>
 
     <!-- =================================================================== -->
-    <!-- TAB 4: CULTURAL TOPICS & CINEMA SANCTUARY                           -->
+    <!-- TAB 4: CULTURAL TOPICS & DIALOGUE SANCTUARY                         -->
     <!-- =================================================================== -->
     <section id="tab-panel-places" class="tab-panel hidden space-y-6">
       
@@ -1820,8 +1811,8 @@ $headPart = @'
         <div class="flex items-center gap-2 border-b border-[#e6decb] pb-3">
           <i data-lucide="landmark" class="w-5 h-5 text-autumn-600"></i>
           <div>
-            <h2 class="font-serif text-2xl font-bold text-slatewarm-900">Cultural Landscapes &amp; The Cinema Sanctuary</h2>
-            <p class="text-xs text-stone-500 mt-0.5">Reflections on Spanish padel culture, English architectural restorations, Hanoi indie cinema, and digital detox</p>
+            <h2 class="font-serif text-2xl font-bold text-slatewarm-900">Cultural Landscapes &amp; Engineering Realities</h2>
+            <p class="text-xs text-stone-500 mt-0.5">Reflections on Venetian bàcari, alpine forest sanctuaries, pharmaceutical testing shifts, and British meeting idioms</p>
           </div>
         </div>
 
@@ -1847,12 +1838,12 @@ $headPart = @'
               <span id="fc-counter" class="text-xs font-mono text-stone-500">Card 1 of 8</span>
             </div>
             <h3 class="font-serif text-2xl font-bold text-slatewarm-900">Interactive Vocabulary Deck</h3>
-            <p class="text-xs text-stone-600">Click the card to flip between definition, spoken lesson context, and Spanish equivalent.</p>
+            <p class="text-xs text-stone-600">Click the card to flip between definition, spoken lesson context, and Italian equivalent.</p>
           </div>
 
           <div onclick="flipFlashcard()" class="cursor-pointer sanctuary-subcard rounded-2xl p-7 min-h-[250px] flex flex-col items-center justify-center text-center space-y-3 border-2 border-[#dfd0b5] hover:border-autumn-400 transition select-none">
-            <span id="fc-badge" class="px-2.5 py-0.5 rounded-full bg-autumn-100 text-autumn-800 text-[11px] font-mono">16:33 • C2 Philosophy</span>
-            <h4 id="fc-front-title" class="font-serif text-3xl font-bold text-slatewarm-900">serendipity</h4>
+            <span id="fc-badge" class="px-2.5 py-0.5 rounded-full bg-autumn-100 text-autumn-800 text-[11px] font-mono">01:08 • C1 Culture</span>
+            <h4 id="fc-front-title" class="font-serif text-3xl font-bold text-slatewarm-900">crunch time</h4>
             <p id="fc-sub" class="text-xs sm:text-sm text-stone-600 max-w-md leading-relaxed">
               Click anywhere on this card to reveal the definition and lesson context
             </p>
@@ -1896,10 +1887,10 @@ $headPart = @'
       <div class="sanctuary-card rounded-3xl p-6 sm:p-8 space-y-4 border-2 border-sage-200/90">
         <div class="flex items-center gap-2">
           <i data-lucide="compass" class="w-5 h-5 text-sage-600"></i>
-          <h2 class="font-serif text-2xl font-bold text-slatewarm-900">Reflections for Lesson 02 (Next Thursday)</h2>
+          <h2 class="font-serif text-2xl font-bold text-slatewarm-900">Reflections for Lesson 02</h2>
         </div>
         <p class="text-xs text-stone-600">
-          Three gentle prompts to reflect on before our next session—including discussing Jonathan Glazer's <em>The Zone of Interest</em> and tracking the mental translation bottleneck!
+          Three thoughtful prompts to reflect on before our next session—including navigating client meetings and planning your post-crunch alpine sanctuary escape!
         </p>
 
         <div id="reflections-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
@@ -1914,7 +1905,7 @@ $headPart = @'
   <!-- FOOTER -->
   <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-xs text-stone-500 border-t border-[#e6decb]/80 mt-8 no-print">
     <p class="font-serif italic text-base text-slatewarm-800 mb-1">"Speak freely, reflect quietly, and let the language become second nature."</p>
-    <p>Personalized English Study Sanctuary prepared by Louie for Giulio M. • Valencia &amp; London Breeze</p>
+    <p>Personalized English Study Sanctuary prepared by Louie for Giulio M. • Veneto &amp; London Breeze</p>
   </footer>
 
   <!-- JAVASCRIPT LOGIC -->
@@ -2230,7 +2221,7 @@ $scriptPart = @"
       if (isCardFlipped) {
         sub.textContent = item.def;
         quote.textContent = item.quote;
-        es.textContent = '🇪🇸 ' + item.es;
+        es.textContent = '🇮🇹 ' + item.es;
         back.classList.remove('hidden');
       } else {
         sub.textContent = 'Click anywhere on this card to reveal the definition and lesson context';
@@ -2516,7 +2507,7 @@ $scriptPart = @"
 
     // 10. CALMING FALLING LEAVES CANVAS
     let canvas, ctx, leaves = [], leavesAnimId = null;
-    let leafMode = 'gentle'; // 'gentle', 'breeze', 'still'
+    let leafMode = 'gentle';
 
     function initLeaves() {
       canvas = document.getElementById('autumn-breeze-canvas');
@@ -2638,21 +2629,27 @@ $scriptPart = @"
 
     // 12. INITIALIZATION WRAPPER
     window.addEventListener('DOMContentLoaded', () => {
-      try {
-        renderTranscript();
-        renderVocabGrid();
-        renderStrengths();
-        renderPhrasing();
-        renderAsrFixes();
-        renderEditorialTopics();
-        renderFlashcard();
-        renderQuiz();
-        renderReflections();
-        initLeaves();
-        inspectVocab('fluency');
-        if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
-      } catch (err) {
-        console.error('Safe initialization caught:', err);
+      [
+        ['Transcript', renderTranscript],
+        ['VocabGrid', renderVocabGrid],
+        ['Strengths', renderStrengths],
+        ['Phrasing', renderPhrasing],
+        ['AsrFixes', renderAsrFixes],
+        ['EditorialTopics', renderEditorialTopics],
+        ['Flashcard', renderFlashcard],
+        ['Quiz', renderQuiz],
+        ['Reflections', renderReflections],
+        ['Leaves', initLeaves],
+        ['InspectorDefault', () => inspectVocab('crunch-time')]
+      ].forEach(([name, fn]) => {
+        try {
+          fn();
+        } catch (err) {
+          console.error('Error initializing ' + name + ':', err);
+        }
+      });
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        try { lucide.createIcons(); } catch (e) { console.error('Lucide error:', e); }
       }
     });
   </script>
