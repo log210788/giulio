@@ -1,8 +1,35 @@
-# 🍂 Giulio's Interactive English Sanctuary — Lesson 01
+# 🍂 Giulio's Interactive English Sanctuary
 
 > **Live GitHub Pages Portal**: [https://log210788.github.io/giulio/](https://log210788.github.io/giulio/)  
-> **Student**: Giulio M. (*transcribed by ASR as Julia / Giulio*, Pharmaceutical Machinery Testing Engineer, Northern Italy / Veneto)  
-> **Tutor**: Louie (Lewis O'Shea, Oxford heritage background, based in Hanoi)  
+> **Student**: Giulio M. (*Pharmaceutical Machinery Testing Engineer, Northern Italy / Veneto*)  
+> **Tutor**: Louie (Lewis O'Shea, Oxford heritage background)  
+
+---
+
+## 📘 Latest Update — Lesson 03 (Monday, Nov 16–17, 2026 | 59.2 min)
+
+- **Transcript File**: [`Transcripts/11-17-2026.txt`](./Transcripts/11-17-2026.txt) (243 speaking turns)
+- **Lesson Plan & Screen-Share Notes**: [`Lesson_11-16-2026_Plan.md`](./Lesson_11-16-2026_Plan.md) & [`lesson-03-60s-fluency-and-pushback.md`](./lesson-03-60s-fluency-and-pushback.md)
+- **Vocabulary Indexed**: **48 B2–C2 terms** with IPA, Italian equivalents, and clickable transcript timestamps
+- **ASR Fixes Applied**: 14 note-taker corrections (e.g., *Julia → Giulio*, *ALF Life → Half-Life*, *INFD/OUTFD → infeed/outfeed*, *sirens → syringes*, *50 earth → 50 Hz*, *steel wheel → star wheel*, *a vo → a vial*, *Never been a drugg → Never been to Prague*)
+
+### What We Covered in Lesson 03
+1. **Safety Training & Work From Home (`00:00`)**: Contrasting passive Zoom/YouTube safety videos with interactive technical training on vision inspection systems (optics, illuminators, physics, data processing) and Giulio's coordinator role.
+2. **Nov 9 Grammar Polishes & Storytelling (`05:00`)**: Reviewed *on social media*, *at the same table*, *a desire of his*, and *make the story come alive and feel believable*, then compared passive cinema vs. interactive storytelling (*Jurassic Park*, *Half-Life 1 & 2*, *BioShock*, *Black Mirror*).
+3. **Optical Vision Inspection & Out-of-Sync Alarms (`14:49`)**: Full technical walkthrough—infeed/outfeed channels, plastic nests, pre-filled syringes, suspension vs. transparent injectables, 36,000 units/hour (100 ms / 32 frames), PLC flagging, and preventing operators from blindly clearing torque-limit *out-of-sync* HMI alarms.
+4. **FAT Point of Failure & Commissioning Sign-Off (`28:27`)**: Missing-door mechanical test crash in Italy (robot smashing water-filled nest onto the wall), troubleshooting root causes, sample tolerances (1,000 design samples; 15,000 for a 1-hr test), and the 3-month commissioning-to-service qualification handover.
+5. **Off-Plan Apartment Milestone (`50:30`)**: Buying a new apartment still "on paper" (50–60% built, two 12-unit buildings, bank-backed developer) — *"we decided to bite"*.
+
+### Lesson Plan Frameworks & Homework Integrated into the Portal
+- **The 3-Beat 60-Second Executive Frame**: Headline (10s) → Root Cause & Fix (30s) → Concrete Ask / Boundary (20s) using *shed light on*, *iron out*, and *table shipping sign-off*.
+- **Diplomatic Pushback Toolkit**: Calm, firm responses for early-shipping pressure (*"I completely understand the schedule pressure; however..."*, *"What we bring to the table is zero-defect reliability..."*) and 16-technician coordination (*staggered shifts*).
+- **Under-3-Minute Voice Note Homework**: Send a max 60-second voice note on Preply giving a client a 3-beat test-delay update using **`shed light on`**, **`iron out`**, and **`sign-off`**.
+
+---
+
+## 🍂 Archive — Lesson 01 (Tuesday, Nov 03, 2026)
+
+> **Live Archive Page**: [`lesson-01.html`](./lesson-01.html)  
 > **Date**: Tuesday, 03 November 2026  
 > **Focus**: Professional Fluency, Engineering Diplomacy, Cultural Idioms & Narrative Storytelling  
 
